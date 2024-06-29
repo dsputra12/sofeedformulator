@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="index_content_description">Index</string>
+    <string name="label_button">label_button</string>
+    <string name="sign_in">sign_in</string>
+    <string name="sign_up">sign_up</string>
+    <string name="page_sign_in">page_sign_in</string>
+    <string name="back_button">back_button</string>
+    <string name="sign_up_button">Sign Up</string>
+    <string name="emailButton">Your Email</string>
+    <string name="passwordButton">Password</string>
+    <string name="sign_in_Button">Sign In</string>
+    <string name="page_sign_up">page_sign_up</string>
+    <string name="user_name">User Name</string>
+    <string name="homepage">Home Page</string>
+    <string name="hello_user">Hello User!</string>
+    <string name="logout">Log Out</string>
+    <string name="google_button">Google Sign In</string>
+    <string name="default_web_client_id">553150937473-knc897egcf55a60ks6pkmk9f5h56h4lq.apps.googleusercontent.com</string>
+
+
+
+</resources>

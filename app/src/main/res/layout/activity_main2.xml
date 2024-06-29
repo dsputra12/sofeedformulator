@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <ImageView
+        android:id="@+id/myImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:contentDescription="@string/index_content_description"
+        android:src="@drawable/index2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"/>
+
+    <ImageButton
+        android:id="@+id/signInButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sign_in"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/sign_in"
+        app:layout_constraintStart_toStartOf="@id/myImageView"
+        app:layout_constraintTop_toTopOf="@id/myImageView"
+        app:layout_constraintBottom_toBottomOf="@id/myImageView"
+        app:layout_constraintEnd_toEndOf="@id/myImageView"
+        android:layout_marginTop="0dp"/>
+
+    <ImageButton
+        android:id="@+id/signUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sign_up"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/sign_up"
+        app:layout_constraintStart_toStartOf="@id/myImageView"
+        app:layout_constraintTop_toTopOf="@id/myImageView"
+        app:layout_constraintBottom_toBottomOf="@id/myImageView"
+        app:layout_constraintEnd_toEndOf="@id/myImageView"
+        android:layout_marginTop="140dp"/>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
