@@ -21,12 +21,12 @@ class SignUp : AppCompatActivity() {
 
     private var firebaseAuth = FirebaseAuth.getInstance()
 
-    override fun onStart() {
-        super.onStart()
-        if(firebaseAuth.currentUser!=null){
-            startActivity(Intent(this, MainActivity::class.java))
-        }
-    }
+//    override fun onStart() {
+//        super.onStart()
+//        if(firebaseAuth.currentUser!=null){
+//            startActivity(Intent(this, MainActivity::class.java))
+//        }
+//    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,13 +61,16 @@ class SignUp : AppCompatActivity() {
         firebaseAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener{ task ->
                 if(task.isSuccessful){
+                    // Buat nsmpilin data user
                     val userUpdateProfile = userProfileChangeRequest {
                         displayName = username
                     }
                     val user = task.result.user
                     user!!.updateProfile(userUpdateProfile)
                         .addOnCompleteListener {
-                            startActivity(Intent(this, MainActivity::class.java))
+                            firebaseAuth.signOut() // Sign out the user
+                            startActivity(Intent(this, SignIn::class.java)) // Redirect to the sign-in page
+                            finish() // Close the sign-up activity
                         }
                         .addOnFailureListener { error2 ->
                             Toast.makeText(this, error2.localizedMessage, LENGTH_SHORT).show()
