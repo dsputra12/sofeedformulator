@@ -2,31 +2,35 @@ package com.sofeed.myapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 
-class homepage : AppCompatActivity() {
-    private lateinit var logout : Button
+class UserProfile : AppCompatActivity() {
+    private lateinit var textUsername : TextView
 
-    private var firebaseAuth = FirebaseAuth.getInstance()
+    private val firebaseAuth = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_homepage)
+        setContentView(R.layout.activity_user_profile)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        textUsername = findViewById(R.id.showUsername)
+        val firebaseUser = firebaseAuth.currentUser
 
-        logout = findViewById(R.id.logout)
-        logout.setOnClickListener {
-            firebaseAuth.signOut()
-            startActivity(Intent(this, MainActivity::class.java))
+        if(firebaseUser != null){
+            textUsername.text = firebaseUser.displayName
+        }
+        else{
+            startActivity(Intent(this, SignIn::class.java ))
+            finish()
         }
     }
 }

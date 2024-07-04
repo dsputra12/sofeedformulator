@@ -23,7 +23,6 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
-
 class SignIn : AppCompatActivity() {
     private lateinit var editEmail: EditText
     private lateinit var editPassword: EditText
@@ -85,8 +84,10 @@ class SignIn : AppCompatActivity() {
             }
         }
         googleButton.setOnClickListener{
-            val signInIntent = googleSignInClient.signInIntent
-            googleSignInLauncher.launch(signInIntent)
+            googleSignInClient.signOut().addOnCompleteListener{
+                val signInIntent = googleSignInClient.signInIntent
+                googleSignInLauncher.launch(signInIntent)
+            }
         }
     }
 
@@ -96,7 +97,7 @@ class SignIn : AppCompatActivity() {
 
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener {
-                startActivity(Intent(this, homepage::class.java))
+                startActivity(Intent(this, Homepage::class.java))
             }
             .addOnFailureListener { error ->
                 Toast.makeText(this, error.localizedMessage, LENGTH_SHORT).show()
@@ -118,7 +119,7 @@ class SignIn : AppCompatActivity() {
         firebaseAuth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    startActivity(Intent(this, homepage::class.java))
+                    startActivity(Intent(this, Homepage::class.java))
                 } else {
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
                     Toast.makeText(applicationContext, "Authentication Failed.", Toast.LENGTH_SHORT).show()

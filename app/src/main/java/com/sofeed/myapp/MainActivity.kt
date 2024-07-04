@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var myButton : ImageButton
 
@@ -17,10 +18,9 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
      super.onStart()
         if(firebaseAuth.currentUser!=null){
-            startActivity(Intent(this, homepage::class.java))
+            startActivity(Intent(this, Homepage::class.java))
         }
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)

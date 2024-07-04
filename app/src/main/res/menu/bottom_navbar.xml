@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title=""
+        android:id="@+id/homepage"
+        android:icon="@drawable/icon1"
+        />
+    <item
+        android:title=""
+        android:id="@+id/hargaPakan"
+        android:icon="@drawable/icon2"
+        />
+    <item
+        android:title=""
+        android:id="@+id/bahanPakan"
+        android:icon="@drawable/icon3"
+        />
+    <item
+        android:title=""
+        android:id="@+id/formulasi"
+        android:icon="@drawable/icon4"
+        />
+    <item
+        android:title=""
+        android:id="@+id/userProfile"
+        android:icon="@drawable/icon5"
+        />
+</menu>
