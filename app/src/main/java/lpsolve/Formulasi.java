@@ -9,7 +9,7 @@ import lpsolve.LpSolve;
 
 
 public class Formulasi {
-    public double[] calculate(double[] hewan, ArrayList<ArrayList<Double>> pakan)
+    public static double[] calculate(double[] hewan, ArrayList<ArrayList<Double>> pakan)
     {
         try {
             //size bahan
