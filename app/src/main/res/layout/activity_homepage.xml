@@ -7,17 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".Homepage">
 
-
-    <Button
-        android:id ="@+id/logout"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/logout"
-        />
-
     <FrameLayout
         android:id="@+id/frame_layout"
         android:layout_width="0dp"

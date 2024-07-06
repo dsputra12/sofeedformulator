@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProfile">
+
+    <ImageView
+        android:id="@+id/myImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/userprofile"
+        android:scaleType="fitXY"
+        android:src="@drawable/userprofile"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Outer Circle -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/outer_circle"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:background="@android:color/white"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/OuterCircle"
+        app:layout_constraintTop_toBottomOf="@id/myImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="-260dp"
+        />
+
+    <!-- Inner Circle -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profile_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/default_profile"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/InnerCircle"
+        app:layout_constraintTop_toTopOf="@id/outer_circle"
+        app:layout_constraintBottom_toBottomOf="@id/outer_circle"
+        app:layout_constraintStart_toStartOf="@id/outer_circle"
+        app:layout_constraintEnd_toEndOf="@id/outer_circle"
+        />
+
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back_button"
+        android:contentDescription="@string/back_button"
+        app:layout_constraintBottom_toTopOf="@id/outer_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="350dp"
+        android:background="@android:color/transparent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/outer_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/edit_profile"
+        android:fontFamily="@font/nunitobold"
+        android:textSize="18sp"
+        android:layout_marginBottom="50dp"
+        />
+
+    <ImageView
+        android:id="@+id/profile_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/profile_icon"
+        app:layout_constraintTop_toBottomOf="@id/myImageView"
+        android:contentDescription="@string/list_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="306dp"
+        android:layout_marginTop="-80dp"
+        />
+
+    <ImageView
+        android:id="@+id/email_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/email"
+        app:layout_constraintTop_toBottomOf="@id/myImageView"
+        android:contentDescription="@string/list_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="306dp"
+        />
+
+    <Button
+        android:id="@+id/saveChanges"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/save_changes"
+        android:fontFamily="@font/nunitobold"
+        android:backgroundTint="@color/selected_color"
+        android:textColor="@color/black"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:maxWidth="200dp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

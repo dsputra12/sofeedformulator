@@ -40,4 +40,9 @@
     <string name="keterangan_profile2">already reflected in the profile page.</string>
     <string name="confirm">Confirm</string>
     <string name="save_changes">Save Changes</string>
+    <string name="Hai">Hai,</string>
+
+    <string name="user">User</string>
+    <string name="teks1">Mari kita jelajahi pakan ternak</string>
+    <string name="teks2">Berkelanjutan</string>
 </resources>

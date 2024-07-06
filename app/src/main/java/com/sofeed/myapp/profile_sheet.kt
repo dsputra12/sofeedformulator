@@ -7,10 +7,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.sofeed.myapp.databinding.ActivityProfileSheetBinding
-import com.sofeed.myapp.databinding.FragmentUsersProfileBinding
+import com.sofeed.myapp.databinding.FragmentEditProfileBinding
 
 class profile_sheet : AppCompatActivity() {
-    private lateinit var binding : FragmentUsersProfileBinding
+    private lateinit var binding: FragmentEditProfileBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,13 +19,14 @@ class profile_sheet : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding = FragmentUsersProfileBinding.inflate(layoutInflater)
+        binding = FragmentEditProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.saveChanges.setOnClickListener {
             showButtomSheet()
         }
     }
+
 
     private fun showButtomSheet(){
         val sheetDialog = BottomSheetDialog(this)

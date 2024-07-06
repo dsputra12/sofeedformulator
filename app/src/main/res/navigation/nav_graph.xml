@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homepage">
+
+    <fragment
+        android:id="@+id/homepageFragment"
+        android:name="com.sofeed.myapp.HomePage2"
+        tools:layout="@layout/fragment_home_page" />
+    <fragment
+        android:id="@+id/usersProfileFragment"
+        android:name="com.sofeed.myapp.UsersProfile"
+        tools:layout="@layout/fragment_users_profile">
+        <action
+            android:id="@+id/action_usersProfileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.sofeed.myapp.EditProfile"
+        tools:layout="@layout/fragment_edit_profile" />
+</navigation>

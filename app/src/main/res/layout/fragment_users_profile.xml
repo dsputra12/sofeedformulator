@@ -1,25 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UsersProfile">
+    tools:context=".UserProfile">
 
-    <TextView
+    <ImageView
+        android:id="@+id/myImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/userprofile"
-        android:textSize="50sp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/userprofile"
+        android:scaleType="fitXY"
+        android:src="@drawable/userprofile"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iconList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/button_icon"
+        app:layout_constraintTop_toBottomOf="@id/myImageView"
+        android:contentDescription="@string/list_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="306dp"
+        android:layout_marginTop="-86dp"
         />
 
     <Button
-        android:id="@+id/save_changes"
+        android:id="@+id/EditProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save Changes"
-        android:layout_marginTop="200dp"
-        android:layout_marginStart="150dp"
+        android:text="@string/edit_profile"
+        android:fontFamily="@font/nunitobold"
+        app:layout_constraintTop_toBottomOf="@id/myImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@android:color/transparent"
+        android:textColor="@color/black"
+        android:layout_marginEnd="124dp"
+        android:layout_marginTop="-86dp"
         />
 
+    <Button
+        android:id="@+id/button_saved_formulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/saved_formulation"
+        android:fontFamily="@font/nunitobold"
+        app:layout_constraintTop_toBottomOf="@id/EditProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@android:color/transparent"
+        android:textColor="@color/black"
+        android:layout_marginEnd="76dp"
+        android:layout_marginTop="29dp"
+        />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/button_change_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change_password"
+        android:fontFamily="@font/nunitobold"
+        app:layout_constraintTop_toBottomOf="@id/button_saved_formulation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@android:color/transparent"
+        android:textColor="@color/black"
+        android:layout_marginEnd="76dp"
+        android:layout_marginTop="29dp"
+        />
+
+    <Button
+        android:id="@+id/button_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        android:fontFamily="@font/nunitobold"
+        app:layout_constraintTop_toBottomOf="@id/button_change_password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@android:color/transparent"
+        android:textColor="@color/black"
+        android:layout_marginEnd="136dp"
+        android:layout_marginTop="29dp"
+        />
+
+    <Button
+        android:id="@+id/button_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/logout"
+        android:fontFamily="@font/nunitobold"
+        app:layout_constraintTop_toBottomOf="@id/button_settings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@android:color/transparent"
+        android:textColor="@color/black"
+        android:layout_marginEnd="136dp"
+        android:layout_marginTop="29dp"
+        />
+
+    <!-- Outer Circle -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/outer_circle"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:background="@android:color/white"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/OuterCircle"
+        app:layout_constraintTop_toBottomOf="@id/myImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="-340dp"
+        />
+
+    <!-- Inner Circle -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profile_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/default_profile"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/InnerCircle"
+        app:layout_constraintTop_toTopOf="@id/outer_circle"
+        app:layout_constraintBottom_toBottomOf="@id/outer_circle"
+        app:layout_constraintStart_toStartOf="@id/outer_circle"
+        app:layout_constraintEnd_toEndOf="@id/outer_circle"
+        />
+
+    <Button
+        android:id="@+id/edit_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_picture"
+        android:fontFamily="@font/nunitobold"
+        android:onClick="editPicture"
+        app:layout_constraintTop_toBottomOf="@id/myImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@android:color/transparent"
+        android:textColor="@color/black"
+        android:layout_marginTop="-230dp"
+        />
+
+    <TextView
+        android:id="@+id/showUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/edit_picture"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/user_name"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/nunitobold"
+        android:textSize="24sp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
