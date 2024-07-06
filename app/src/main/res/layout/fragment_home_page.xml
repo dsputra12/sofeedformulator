@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="350dp"/>
+        android:layout_marginEnd="300dp"/>
 
     <TextView
         android:id="@+id/nama_user"
@@ -59,10 +59,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="300dp"/>
+        android:layout_marginEnd="250dp"/>
 
     <TextView
-        android:id="@+id/teks1"
+        android:id="@+id/keterangan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/hai"
@@ -72,59 +72,33 @@
         android:fontFamily="@font/nunitobold"
         android:textSize="13sp"
         android:textColor="@color/white"
-        android:layout_marginEnd="145dp"
+        android:layout_marginEnd="90dp"
         android:layout_marginTop="10dp"
        />
 
-    <TextView
-        android:id="@+id/teks2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/teks1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/teks2"
-        android:fontFamily="@font/nunitobold"
-        android:textSize="13sp"
-        android:textColor="@color/white"
-        android:layout_marginEnd="245dp"
-        />
-
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/teks2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/rounded_searchbar"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
-        />
 
     <ImageView
         android:id="@+id/cardBahanPakan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/searchView"
+        app:layout_constraintTop_toBottomOf="@id/keterangan"
         android:src="@drawable/card_bahan_pakan"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="220dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginEnd="190dp"
+        android:layout_marginTop="100dp"
         />
 
     <ImageView
         android:id="@+id/cardHarga"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/searchView"
+        app:layout_constraintTop_toBottomOf="@id/keterangan"
         android:src="@drawable/card_harga"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="-200dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginEnd="-190dp"
+        android:layout_marginTop="100dp"
         />
 
     <ImageView
@@ -135,8 +109,8 @@
         android:src="@drawable/card_metana"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="220dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginEnd="190dp"
+        android:layout_marginTop="20dp"
         />
 
     <ImageView
@@ -147,8 +121,8 @@
         android:src="@drawable/card_formulasi"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="-200dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginEnd="-190dp"
+        android:layout_marginTop="20dp"
         android:clickable="true"
         android:focusable="true"
         />

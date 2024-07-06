@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    app:cardUseCompatPadding="true"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="10dp"
+    app:cardElevation="8dp"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/gambarPakan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/pakan_hijauan">
+            </ImageView>
+
+        </androidx.cardview.widget.CardView>
+        
+        <TextView
+            android:id="@+id/nama_pakan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Padi"
+            android:fontFamily="@font/nunitobold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="150dp"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/tipe_pakan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Pakan Hijauan"
+            android:fontFamily="@font/nunitobold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="85dp"
+            android:layout_marginTop="20dp"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/harga_pakan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Harga Pakan: "
+            android:fontFamily="@font/nunitobold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="85dp"
+            android:layout_marginTop="40dp"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/nilai_harga"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="10000"
+            android:fontFamily="@font/nunitobold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="-55dp"
+            android:layout_marginTop="40dp"
+            >
+        </TextView>
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</com.google.android.material.card.MaterialCardView>

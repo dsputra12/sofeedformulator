@@ -1,35 +1,47 @@
 package com.sofeed.myapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.sofeed.myapp.databinding.FragmentFormulasiBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [formulasi.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Formulasi : Fragment() {
-
+    private lateinit var binding: FragmentFormulasiBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_formulasi, container, false)
+        binding = FragmentFormulasiBinding.inflate(inflater,container, false)
+        return (binding.root)
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(requireContext(), "Ini Error", Toast.LENGTH_SHORT).show()
+        val button1: Button = view.findViewById(R.id.LakukanFormulasi)
+        val button2: Button = view.findViewById(R.id.RekapFormulasi)
+
+        enableEdgeToEdge(binding.root)
+
+        button1.setOnClickListener {
+            startActivity(Intent(requireContext(), LakukanFormulasi::class.java))
+        }
+    }
+
+    private fun enableEdgeToEdge(view: View) {
+        ViewCompat.setOnApplyWindowInsetsListener(view) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            WindowInsetsCompat.CONSUMED
+        }
     }
 }

@@ -1,16 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Formulasi">
+    tools:context=".HomePage2">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:id="@+id/myImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/formulasi"
-        android:textSize="50sp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/homepage"
+        android:scaleType="fitXY"
+        android:src="@drawable/homepage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/JudulFormulasi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/LakukanFormulasi"
+        android:text="@string/formulasi"
+        android:fontFamily="@font/nunitobold"
+        android:backgroundTint="@color/hijau_tua"
+        android:textColor="@color/white"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="80dp"
+        android:maxWidth="20dp"
+        android:textSize="28dp"
+        android:clickable="false"
+        />
+
+    <Button
+        android:id="@+id/LakukanFormulasi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/JudulFormulasi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Lakukan Formulasi"
+        android:fontFamily="@font/nunitobold"
+        android:backgroundTint="@color/hijau_tua"
+        android:textColor="@color/white"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="100dp"
+        android:maxWidth="20dp"
+        android:textSize="28dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/RekapFormulasi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/LakukanFormulasi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Lihat Rekap Formulasi"
+        android:fontFamily="@font/nunitobold"
+        android:backgroundTint="@color/hijau_tua"
+        android:textColor="@color/white"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="50dp"
+        android:maxWidth="20dp"
+        android:textSize="28dp"
+        android:clickable="true"
+        />
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

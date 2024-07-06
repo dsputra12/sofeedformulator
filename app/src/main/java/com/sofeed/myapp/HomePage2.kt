@@ -18,7 +18,7 @@ class HomePage2 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding =FragmentHomePageBinding.inflate(inflater, container, false)
+        binding = FragmentHomePageBinding.inflate(inflater, container, false)
         return binding.root
     }
 
