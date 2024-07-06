@@ -35,12 +35,12 @@
             android:id="@+id/nama_pakan"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Padi"
+            android:text="@string/rumput_gajah"
             android:fontFamily="@font/nunitobold"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="150dp"
+
             >
         </TextView>
 
@@ -54,7 +54,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="85dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="25dp"
             >
         </TextView>
 
@@ -68,7 +68,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="85dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="45dp"
             >
         </TextView>
 
@@ -82,9 +82,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="-55dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="45dp"
             >
         </TextView>
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
 
 
 
