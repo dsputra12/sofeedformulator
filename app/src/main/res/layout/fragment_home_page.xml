@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".HomePage2">
 
+    <!-- Using standard margins with constraints -->
     <ImageView
         android:id="@+id/myImageView"
         android:layout_width="match_parent"
@@ -14,13 +15,14 @@
         android:adjustViewBounds="true"
         android:contentDescription="@string/homepage"
         android:scaleType="fitXY"
-        android:src="@drawable/homepage"
+        android:src="@drawable/homepage_pendek"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
-    <!-- Using standard margins with constraints -->
+        app:layout_constraintVertical_bias="1.0" />
+
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/profile_image"
         android:layout_width="wrap_content"
@@ -38,94 +40,242 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/profile_image"
-        android:text="@string/Hai"
+        android:text="Hai,\nMari kita jelajahi pakan ternak\nberkelanjutan"
         android:fontFamily="@font/nunitobold"
         android:textSize="18sp"
         android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="300dp"/>
+        android:layout_marginEnd="100dp"/>
 
     <TextView
         android:id="@+id/nama_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/profile_image"
+        app:layout_constraintEnd_toEndOf="@id/hai"
         android:text="@string/user"
         android:fontFamily="@font/nunitobold"
         android:textSize="18sp"
         android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="250dp"/>
-
-    <TextView
-        android:id="@+id/keterangan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/hai"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/teks1"
-        android:fontFamily="@font/nunitobold"
-        android:textSize="13sp"
-        android:textColor="@color/white"
-        android:layout_marginEnd="90dp"
-        android:layout_marginTop="10dp"
-       />
-
-
-    <ImageView
-        android:id="@+id/cardBahanPakan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/keterangan"
-        android:src="@drawable/card_bahan_pakan"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="190dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginEnd="130dp"
         />
 
-    <ImageView
-        android:id="@+id/cardHarga"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/keterangan"
-        android:src="@drawable/card_harga"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="-190dp"
-        android:layout_marginTop="100dp"
-        />
+<!--    <TextView-->
+<!--        android:id="@+id/keterangan"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/hai"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:text="@string/teks1"-->
+<!--        android:fontFamily="@font/nunitobold"-->
+<!--        android:textSize="13sp"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:layout_marginEnd="90dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--       />-->
 
-    <ImageView
-        android:id="@+id/cardMetana"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/cardBahanPakan"
-        android:src="@drawable/card_metana"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="190dp"
-        android:layout_marginTop="20dp"
-        />
 
-    <ImageView
-        android:id="@+id/cardFormulasi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/cardHarga"
-        android:src="@drawable/card_formulasi"
+<!--    <ImageView-->
+<!--        android:id="@+id/cardBahanPakan"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/keterangan"-->
+<!--        android:src="@drawable/card_bahan_pakan"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginEnd="190dp"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/cardHarga"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/keterangan"-->
+<!--        android:src="@drawable/card_harga"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginEnd="-190dp"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/cardMetana"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/cardBahanPakan"-->
+<!--        android:src="@drawable/card_metana"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginEnd="190dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/cardFormulasi"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/cardHarga"-->
+<!--        android:src="@drawable/card_formulasi"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginEnd="-190dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true"-->
+<!--        />-->
+
+    <FrameLayout
+        android:id="@+id/containerInformasiPakan"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_rectangle"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="-190dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="160dp"
+        style="@style/RoundedRectangle"
+        android:backgroundTint="@color/pink"
         android:clickable="true"
-        android:focusable="true"
-        />
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Informasi Pakan"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_marginStart="40sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Berisi data\nbahan-bahan pakan"
+            android:fontFamily="@font/nunitobold"
+            android:textColor="@color/white"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="10dp"
+            android:clickable="true"
+            />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/containerMetana"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_rectangle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="160dp"
+        style="@style/RoundedRectangle"
+        android:backgroundTint="@color/ungu"
+        android:clickable="true"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Metana"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_marginStart="40sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Informasi terkait metana"
+            android:fontFamily="@font/nunitobold"
+            android:textColor="@color/white"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="10dp"
+            />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/containerMarket"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_rectangle"
+        app:layout_constraintTop_toBottomOf="@id/containerInformasiPakan"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        style="@style/RoundedRectangle"
+        android:backgroundTint="@color/mint"
+        android:clickable="true"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Market"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_marginStart="40sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Untuk transaksi\nbahan pakan"
+            android:fontFamily="@font/nunitobold"
+            android:textColor="@color/white"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="10dp"
+            />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/containerFormulasi"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_rectangle"
+        app:layout_constraintTop_toBottomOf="@id/containerMetana"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        style="@style/RoundedRectangle"
+        android:backgroundTint="@color/orange"
+        android:clickable="true"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Formulasi"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_marginStart="40sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buat formulasi\nanda disini"
+            android:fontFamily="@font/nunitobold"
+            android:textColor="@color/white"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="10dp"
+            />
+    </FrameLayout>
+
+
+
+
+
 
 
 

@@ -1,5 +1,6 @@
 package com.sofeed.myapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,9 +11,8 @@ import com.sofeed.myapp.databinding.FragmentBahanPakanBinding
 
 
 class BahanPakan : Fragment() {
-    private lateinit var bahanPakanHijauan : Button
-    private lateinit var bahanPakanKonsentrat: Button
-    private lateinit var MineralDanVitamin: Button
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,24 +23,14 @@ class BahanPakan : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        bahanPakanHijauan = view.findViewById(R.id.bahanPakanHijauan)
-        bahanPakanKonsentrat = view.findViewById(R.id.bahanPakanKonsentrat)
-        MineralDanVitamin = view.findViewById(R.id.MineralDanVitamin)
 
-        bahanPakanHijauan.setOnClickListener {
-            navigateToBahanPakanHijauan()
+        val buttonDaftarBahanPakan: Button = view.findViewById(R.id.DaftarBahanPakan)
+        buttonDaftarBahanPakan.setOnClickListener {
+            startActivity(Intent(requireContext(), DaftarBahanPakan::class.java))
         }
-
-//        bahanPakanKonsentrat.setOnClickListener {
-//            navigateToBahanPakanKonsentrat()
-//        }
-//
-//        MineralDanVitamin.setOnClickListener {
-//            navigateToMineralDanVitamin()
-//        }
     }
 
-    private fun navigateToBahanPakanHijauan(){
+    private fun navigateToDaftarBahanPakan(){
         val PakanHijauanFragment = PakanHijauan() // Replace with your actual fragment instantiation method
         parentFragmentManager.beginTransaction()
             .replace(R.id.frame_layout, PakanHijauanFragment)

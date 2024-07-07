@@ -76,7 +76,7 @@
             android:id="@+id/nilai_harga"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="10000"
+            android:text="1000"
             android:fontFamily="@font/nunitobold"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"

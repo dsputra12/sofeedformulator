@@ -11,4 +11,10 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="RoundedRectangle">
+        <item name="android:background">
+            @drawable/rounded_rectangle
+        </item>
+    </style>
 </resources>
