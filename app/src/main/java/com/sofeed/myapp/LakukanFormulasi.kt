@@ -10,8 +10,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class LakukanFormulasi : AppCompatActivity() {
+
     private lateinit var recyclerView: RecyclerView
     private lateinit var searchView: SearchView
+
+    private var mList = ArrayList<FormulasiData>()
+    private lateinit var adapter: FormulasiAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,8 +34,11 @@ class LakukanFormulasi : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         addDataToList()
+
+        adapter = FormulasiAdapter(mList)
+        recyclerView.adapter = adapter
     }
     private fun addDataToList(){
-
+        mList.add(FormulasiData("Rumput Ijo", "Hijauan", 1000.0, R.drawable.pakan_hijauan))
     }
 }
