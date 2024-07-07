@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LihatKandunganNutrisi">
+
+    <ImageView
+        android:id="@+id/myImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/hasil_formulasi"
+        android:scaleType="fitXY"
+        android:src="@drawable/hasil_formulasi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <Button
+        android:id="@+id/JudulFormulasi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/kandungan_nutrisi"
+        android:fontFamily="@font/nunitobold"
+        android:backgroundTint="@color/hijau_tua"
+        android:textColor="@color/white"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="20dp"
+        android:maxWidth="20dp"
+        android:textSize="26dp"
+        android:clickable="false"
+        />
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@drawable/rounded_rectangle"-->
+<!--        android:padding="16dp"-->
+<!--        android:text="Bahan Kering"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="12sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        android:fontFamily="@font/nunitoextrabold"-->
+<!--        android:paddingTop="30dp"-->
+<!--        />-->
+    
+    <FrameLayout
+        android:id="@+id/containerBahanKering"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_rectangle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="140dp"
+        android:layout_marginStart="20dp">
+
+        <TextView
+            android:id="@+id/judulBahanKering"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bahan Kering"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="20sp"/>
+
+        <TextView
+            android:id="@+id/nilaiBahanKering"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/default_bahan_kering"
+            android:fontFamily="@font/nunitobold"
+            android:textColor="@color/black"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="50dp"
+            android:textSize="20sp"
+            />
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/containerLemak"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_rectangle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="20dp">
+
+        <TextView
+            android:id="@+id/judulLemak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lemak"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="40sp"/>
+
+        <TextView
+            android:id="@+id/nilaiLemak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/default_lemak"
+            android:fontFamily="@font/nunitobold"
+            android:textColor="@color/black"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp"
+            android:textSize="20sp"
+            />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/containerSerat"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_rectangle"
+        app:layout_constraintTop_toBottomOf="@id/containerLemak"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/judulSerat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Serat"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="40sp"/>
+
+        <TextView
+            android:id="@+id/nilaiSerat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/default_serat"
+            android:fontFamily="@font/nunitobold"
+            android:textColor="@color/black"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp"
+            android:textSize="20sp"
+            />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/containerAbu"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_rectangle"
+        app:layout_constraintTop_toBottomOf="@id/containerBahanKering"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/judulAbu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Abu"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="40sp"/>
+
+        <TextView
+            android:id="@+id/nilaiAbu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/default_lemak"
+            android:fontFamily="@font/nunitobold"
+            android:textColor="@color/black"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp"
+            android:textSize="20sp"
+            />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/containerProtein"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_rectangle"
+        app:layout_constraintTop_toBottomOf="@id/containerAbu"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/judulProtein"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Protein"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="40sp"/>
+
+        <TextView
+            android:id="@+id/nilaiProtein"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/default_lemak"
+            android:fontFamily="@font/nunitobold"
+            android:textColor="@color/black"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp"
+            android:textSize="20sp"
+            />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/containerTDN"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:background="@drawable/rounded_rectangle"
+        app:layout_constraintTop_toBottomOf="@id/containerSerat"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/judulTDN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TDN"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="40sp"/>
+
+        <TextView
+            android:id="@+id/nilaiTDN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/default_lemak"
+            android:fontFamily="@font/nunitobold"
+            android:textColor="@color/black"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp"
+            android:textSize="20dp"
+            />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/containerUtama"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:background="@drawable/rounded_rectangle"
+        app:layout_constraintTop_toBottomOf="@id/containerTDN"
+        app:layout_constraintStart_toStartOf = "parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="30dp">
+
+        <TextView
+            android:id="@+id/nilaiHarga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/default_harga"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="120sp"
+            />
+
+        <TextView
+            android:id="@+id/judulCa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ca"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="90dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="40sp"
+            />
+
+        <TextView
+            android:id="@+id/nilaiCa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/default_ca"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="55dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="40sp"
+            />
+
+        <TextView
+            android:id="@+id/judulP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="P"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="90dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="160sp"/>
+
+        <TextView
+            android:id="@+id/nilaiP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/default_p"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="55dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="160sp"/>
+
+        <TextView
+            android:id="@+id/judulMetana"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Metana"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="90dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="250sp"/>
+
+        <TextView
+            android:id="@+id/nilaiMetana"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/default_metana"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunitoextrabold"
+            android:layout_marginTop="55dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="250sp"/>
+
+
+
+    </FrameLayout>
+
+
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/containerUtama"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        android:text="@string/home"
+        android:fontFamily="@font/nunitoextrabold"
+        android:backgroundTint="@color/hijau_muda"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="25dp"
+        />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/containerUtama"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:text="@string/save"
+        android:fontFamily="@font/nunitoextrabold"
+        android:backgroundTint="@color/hijau_muda"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        android:clickable="false"
+        />
+
+
+    <Button
+        android:id="@+id/shareButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/containerUtama"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:text="@string/share"
+        android:fontFamily="@font/nunitoextrabold"
+        android:backgroundTint="@color/hijau_muda"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="25dp"
+        android:clickable="false"
+        />
+
+
+
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

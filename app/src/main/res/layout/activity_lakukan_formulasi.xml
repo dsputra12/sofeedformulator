@@ -5,7 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LakukanFormulasi">
+    tools:context=".LakukanFormulasi"
+    android:focusableInTouchMode="true"
+    >
 
     <ImageView
         android:id="@+id/myImageView"
@@ -34,7 +36,7 @@
         android:textColor="@color/white"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:maxWidth="20dp"
         android:textSize="28dp"
         android:clickable="false"
@@ -50,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@id/PilihBahanFormulasi"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         >
@@ -67,10 +69,8 @@
                 app:iconifiedByDefault="false"
                 app:queryBackground="@android:color/transparent"
                 />
-
-
     </com.google.android.material.card.MaterialCardView>
-    
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
@@ -82,19 +82,45 @@
         app:layout_constraintTop_toBottomOf="@id/materialCardView"
         />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="0dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toTopOf="@id/myImageView"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:itemIconTint="@color/nav_item_color"
-        app:itemTextColor="@color/nav_item_color"
-        app:labelVisibilityMode="unlabeled"
-        app:menu="@menu/bottom_navbar">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="530dp"
+        android:layout_marginHorizontal="30dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:background="@color/white"
+        app:boxBackgroundMode="filled"
+        >
+        <AutoCompleteTextView
+            android:id="@+id/autoComplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/pilih_hewan"
+            android:inputType="none">
+        </AutoCompleteTextView>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+    <Button
+        android:id="@+id/buttonFormulasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/formulasikan"
+        android:fontFamily="@font/nunitobold"
+        android:backgroundTint="@color/hijau_tua"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="10dp"
+        android:paddingHorizontal="40dp"/>
+
+
+
+
 
 
 
