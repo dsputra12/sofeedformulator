@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
-                android:src="@drawable/pakan_hijauan"></ImageView>
+                android:src="@drawable/pakan_hijauan"/>
 
         </androidx.cardview.widget.CardView>
         
@@ -79,6 +79,7 @@
             android:layout_marginTop="32dp"
             android:fontFamily="@font/nunitobold"
             android:hint="Masukan Harga"
+            android:inputType="number"
             android:textSize="14sp"
             app:layout_constraintEnd_toStartOf="@+id/checkbox"
             app:layout_constraintHorizontal_bias="0.037"
