@@ -1,3 +1,8 @@
 package com.sofeed.myapp
 
-data class FormulasiData(val namaPakan: String, val tipePakan: String, var hargaPakan: Double, val gambarPakan: Int)
+import android.text.Editable
+
+data class FormulasiData(val namaPakan: String, val tipePakan: String, var hargaPakan: String, val gambarPakan: Int)
+{
+
+}

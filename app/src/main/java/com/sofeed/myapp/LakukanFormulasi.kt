@@ -25,6 +25,7 @@ class LakukanFormulasi : AppCompatActivity() {
     private lateinit var button: Button
     @SuppressLint("MissingInflatedId")
 
+    //untuk recycler view
     private var mList = ArrayList<FormulasiData>()
     private lateinit var adapter: FormulasiAdapter
 
@@ -65,10 +66,10 @@ class LakukanFormulasi : AppCompatActivity() {
 
         addDataToList()
 
-        adapter = FormulasiAdapter(mList)
-        recyclerView.adapter = adapter
+        this.adapter = FormulasiAdapter(mList)
+        recyclerView.adapter = this.adapter
     }
     private fun addDataToList(){
-        mList.add(FormulasiData("Rumput Ijo", "Hijauan", 1000.0, R.drawable.pakan_hijauan))
+        mList.add(FormulasiData("Rumput Ijo", "Hijauan", "1000", R.drawable.pakan_hijauan))
     }
 }

@@ -33,7 +33,8 @@ class FormulasiAdapter(var mList: List<FormulasiData>) :
     override fun onBindViewHolder(holder: PakanViewHolder, position: Int) {
         holder.logo.setImageResource(mList[position].gambarPakan)
         holder.namaPakan.text = mList[position].namaPakan
-
+        holder.hargaPakan.setText(mList[position].hargaPakan)
+        holder.tipePakan.text = mList[position].tipePakan
     }
 
 }
