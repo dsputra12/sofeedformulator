@@ -11,6 +11,9 @@ import android.widget.Toast
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.sofeed.myapp.databinding.FragmentFormulasiBinding
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import java.text.Normalizer.Form
 
 
 class Formulasi : Fragment() {
@@ -27,13 +30,19 @@ class Formulasi : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val mList = ArrayList<FormulasiData>()
+
+
         val button1: Button = view.findViewById(R.id.LakukanFormulasi)
         val button2: Button = view.findViewById(R.id.RekapFormulasi)
 
         enableEdgeToEdge(binding.root)
 
         button1.setOnClickListener {
-            startActivity(Intent(requireContext(), LakukanFormulasi::class.java))
+            val intent = Intent(requireContext(), LakukanFormulasi::class.java)
+            intent.putParcelableArrayListExtra("mList", mList)
+            startActivity(intent)
         }
     }
 

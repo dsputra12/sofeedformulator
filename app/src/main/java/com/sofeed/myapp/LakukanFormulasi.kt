@@ -3,6 +3,7 @@ package com.sofeed.myapp
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -17,6 +18,8 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.setPadding
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class LakukanFormulasi : AppCompatActivity() {
 
@@ -32,6 +35,7 @@ class LakukanFormulasi : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         setContentView(R.layout.activity_lakukan_formulasi)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -103,7 +107,10 @@ class LakukanFormulasi : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        addDataToList()
+        if(mList.isEmpty())
+        {
+            addDataToList()
+        }
 
         saya = FormulasiAdapter(this, mList)
         recyclerView.adapter = saya
@@ -137,15 +144,76 @@ class LakukanFormulasi : AppCompatActivity() {
                 hasil.add(komponen)
             }
 
-            val intent = Intent(this,HasilFormulasi::class.java)
-            intent.putExtra("hewan",hewan)
-            intent.putParcelableArrayListExtra("data",hasil)
+            val intentLakukan = Intent(this,HasilFormulasi::class.java)
+            intentLakukan.putExtra("hewan",hewan)
+            intentLakukan.putParcelableArrayListExtra("data",hasil)
 
             startActivity(intent)
         }
     }
     private fun addDataToList(){
-        mList.add(FormulasiData("Rumput Ijo", "Hijauan", "1000", R.drawable.pakan_hijauan,
+        val db = Firebase.firestore
+
+        db.collection("pakan").get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val kategori = document.getString("kategori").orEmpty()
+                    val nama = document.getString("nama_pakan").orEmpty()
+                    val bahanKering = document.getDouble("bahan_kering") ?: 0.0
+                    val abu = document.getDouble("abu") ?: 0.0
+                    val minJumlah = document.getDouble("min_jumlah") ?: 0.0
+                    val maxJumlah = document.getDouble("max_jumlah") ?: 0.0
+                    val pk = document.getDouble("pk") ?: 0.0
+                    val lk = document.getDouble("lk") ?: 0.0
+                    val sk = document.getDouble("sk") ?: 0.0
+                    val betn = document.getDouble("betn") ?: 0.0
+                    val tdn = document.getDouble("tdn") ?: 0.0
+                    val ca = document.getDouble("ca") ?: 0.0
+                    val p = document.getDouble("p") ?: 0.0
+                    val metana = document.getDouble("metana") ?: 0.0
+                    val ratio = document.getDouble("ratio") ?: 0.0
+                    val harga = document.getDouble("harga").toString()
+
+                    val gambar: Int = when (kategori) {
+                        "Hijauan" -> R.drawable.pakan_hijauan
+                        "Konsentrat" -> R.drawable.pakan_konsentrat
+                        else -> R.drawable.pakan_mineral
+                    }
+
+                    Log.d("LakukanFormulasi", "Fetched item: $nama")
+
+                    mList.add(
+                        FormulasiData(
+                            nama,
+                            kategori,
+                            harga,
+                            gambar,
+                            minJumlah,
+                            maxJumlah,
+                            bahanKering,
+                            abu,
+                            pk,
+                            lk,
+                            sk,
+                            betn,
+                            tdn,
+                            ca,
+                            p,
+                            metana,
+                            false,
+                            ratio
+                        )
+                    )
+                }
+                Log.d("LakukanFormulasi", "Total items fetched: ${mList.size}")
+                saya.notifyDataSetChanged() // Notify adapter of data changes
+            }
+            .addOnFailureListener { exception ->
+                Log.e("LakukanFormulasi", "Error fetching data", exception)
+                Toast.makeText(this, "Error fetching data: ${exception.message}", Toast.LENGTH_LONG).show()
+            }
+
+        /*mList.add(FormulasiData("Rumput Ijo", "Hijauan", "1000", R.drawable.pakan_hijauan,
             0.0, 70.0, 17.9, 13.8, 9.7, 2.0, 36.1, 38.4,
             58.0, 0.36, 0.29, 28.0, false, 0.34))
         mList.add(FormulasiData("Rumput Biru", "Hijauan", "1000", R.drawable.pakan_hijauan,
@@ -153,6 +221,6 @@ class LakukanFormulasi : AppCompatActivity() {
             58.0, 0.36, 0.29, 28.0, false, 0.34))
         mList.add(FormulasiData("Rumput Ungu", "Hijauan", "1000", R.drawable.pakan_hijauan,
             0.0, 70.0, 17.9, 13.8, 9.7, 2.0, 36.1, 38.4,
-            58.0, 0.36, 0.29, 28.0, false, 0.34))
+            58.0, 0.36, 0.29, 28.0, false, 0.34))*/
     }
 }
