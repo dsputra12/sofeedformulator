@@ -15,70 +15,114 @@
         android:contentDescription="@string/hasil_formulasi"
         android:scaleType="fitXY"
         android:src="@drawable/hasil_formulasi"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/JudulFormulasi"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/hasil_formulasi"
-        android:fontFamily="@font/nunitobold"
-        android:backgroundTint="@color/hijau_tua"
-        android:textColor="@color/white"
         android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
         android:layout_marginTop="20dp"
-        android:maxWidth="20dp"
-        android:textSize="28dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="@color/hijau_tua"
         android:clickable="false"
-        />
+        android:fontFamily="@font/nunitobold"
+        android:maxWidth="20dp"
+        android:text="@string/hasil_formulasi"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/LihatKandunganNutrisi"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/lihat_kandungan"
-        android:fontFamily="@font/nunitobold"
-        android:backgroundTint="@color/hijau_tua"
-        android:textColor="@color/white"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="20dp"
-        android:maxWidth="20dp"
-        android:textSize="20dp"
+        android:backgroundTint="@color/hijau_tua"
         android:clickable="false"
-        />
+        android:fontFamily="@font/nunitobold"
+        android:maxWidth="20dp"
+        android:text="@string/lihat_kandungan"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <Button
         android:id="@+id/back_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/LihatKandunganNutrisi"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/kembali"
-        android:fontFamily="@font/nunitobold"
-        android:textColor="@color/white"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="10dp"
-        android:maxWidth="20dp"
-        android:textSize="20dp"
-        android:clickable="false"
         android:backgroundTint="@color/hijau_tua"
-        />
+        android:clickable="false"
+        android:fontFamily="@font/nunitobold"
+        android:maxWidth="20dp"
+        android:text="@string/kembali"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/LihatKandunganNutrisi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="78dp"
+        android:text="Bahan"
+        android:fontFamily="@font/nunitobold"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/JudulFormulasi" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunitobold"
+        android:text="Persen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/myImageView"
+        app:layout_constraintTop_toBottomOf="@+id/JudulFormulasi" />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunitobold"
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="78dp"
+        android:layout_marginEnd="40dp"
+        android:text="Harga"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/JudulFormulasi" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewHasil"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/back_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

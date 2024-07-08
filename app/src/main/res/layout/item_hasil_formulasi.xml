@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="20dp"
-    app:cardUseCompatPadding="true"
+    app:cardUseCompatPadding="false"
     android:layout_marginHorizontal="16dp"
     android:layout_marginTop="10dp"
     app:cardElevation="8dp"
@@ -28,7 +28,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/frame_harga"
             android:layout_width="70dp"
             android:layout_height="match_parent"
@@ -36,23 +36,25 @@
             app:layout_constraintStart_toEndOf="@+id/nama_hasil"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@id/frame_emisi"
-            app:cardCornerRadius="20dp"
-            android:background="@color/cardview_light_background">
+            app:cardCornerRadius="5dp"
+            app:cardBackgroundColor="@color/hijau_muda">
 
             <TextView
-
+                android:id="@+id/persen_hasil"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Harga"
+                android:text="Persen"
+                android:textAlignment="center"
+                android:textColor="@color/white"
                 android:fontFamily="@font/nunitobold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/frame_emisi"
             android:layout_width="70dp"
             android:layout_height="match_parent"
@@ -60,20 +62,23 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/frame_harga"
             app:layout_constraintTop_toTopOf="parent"
-            app:cardCornerRadius="20dp"
-            android:background="@color/green">
+            app:cardCornerRadius="5dp"
+            app:cardBackgroundColor="@color/mint">
 
             <TextView
+                android:id="@+id/harga_hasil"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Emisi"
+                android:text="Harga"
+                android:textColor="@color/white"
                 android:fontFamily="@font/nunitobold"
+                android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
 
 

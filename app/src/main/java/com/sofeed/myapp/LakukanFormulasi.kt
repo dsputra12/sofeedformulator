@@ -148,7 +148,7 @@ class LakukanFormulasi : AppCompatActivity() {
             intentLakukan.putExtra("hewan",hewan)
             intentLakukan.putParcelableArrayListExtra("data",hasil)
 
-            startActivity(intent)
+            startActivity(intentLakukan)
         }
     }
     private fun addDataToList(){
