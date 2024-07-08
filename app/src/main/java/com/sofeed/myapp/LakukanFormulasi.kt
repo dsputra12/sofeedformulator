@@ -141,7 +141,9 @@ class LakukanFormulasi : AppCompatActivity() {
                     i.hargaPakan.toDouble(),
                     i.rasio
                 )
-                hasil.add(komponen)
+                if(i.isSelected) {
+                    hasil.add(komponen)
+                }
             }
 
             val intentLakukan = Intent(this,HasilFormulasi::class.java)
