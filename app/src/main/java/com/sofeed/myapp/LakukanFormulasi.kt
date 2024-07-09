@@ -53,7 +53,7 @@ class LakukanFormulasi : AppCompatActivity() {
             WindowInsetsCompat.CONSUMED
         }
 
-        val items = listOf("Sapi Pedaging", "Sapi Perah")
+        val items = listOf("Sapi Pedaging", "Sapi Perah", "Kambing", "Domba")
 
         val autoComplete : AutoCompleteTextView = findViewById(R.id.autoComplete)
 
@@ -84,7 +84,7 @@ class LakukanFormulasi : AppCompatActivity() {
                 hewan[15] = 100.0
                 hewan[16] = 1.2
                 hewan[17] = 0.8
-            }else{
+            }else if(itemSelected == "Sapi Perah"){
                 hewan[0] = 86.0
                 hewan[1] = 0.0
                 hewan[2] = 18.0
@@ -103,6 +103,44 @@ class LakukanFormulasi : AppCompatActivity() {
                 hewan[15] = 100.0
                 hewan[16] = 1.3
                 hewan[17] = 0.8
+            }else if(itemSelected == "Kambing"){
+                hewan[0] = 0.0
+                hewan[1] = 0.0
+                hewan[2] = 14.0
+                hewan[3] = 0.0
+                hewan[4] = 0.0
+                hewan[5] = 0.0
+                hewan[6] = 65.0
+                hewan[7] = 0.3
+                hewan[8] = 0.4
+                hewan[9] = 100.0
+                hewan[10] = 9.0
+                hewan[11] = 100.0
+                hewan[12] = 7.0
+                hewan[13] = 100.0
+                hewan[14] = 100.0
+                hewan[15] = 100.0
+                hewan[16] = 0.8
+                hewan[17] = 100.0
+            }else{
+                hewan[0] = 0.0
+                hewan[1] = 0.0
+                hewan[2] = 10.0
+                hewan[3] = 0.0
+                hewan[4] = 0.0
+                hewan[5] = 0.0
+                hewan[6] = 60.0
+                hewan[7] = 0.3
+                hewan[8] = 0.2
+                hewan[9] = 100.0
+                hewan[10] = 8.0
+                hewan[11] = 100.0
+                hewan[12] = 7.0
+                hewan[13] = 100.0
+                hewan[14] = 100.0
+                hewan[15] = 100.0
+                hewan[16] = 0.8
+                hewan[17] = 100.0
             }
             Toast.makeText(this, "Item: $itemSelected", Toast.LENGTH_SHORT).show()
         }
