@@ -52,16 +52,16 @@ class BahanAdapter(context: Context, private var mList: ArrayList<FormulasiData>
         holder.hargaPakan.text = String.format("Rp. %s", mList[position].hargaPakan)
         holder.namaPakan.text = mList[position].namaPakan
         holder.tipePakan.text = mList[position].tipePakan
-        holder.bk.text = String.format("%.2f%%", mList[position].bahanKering)
-        holder.abu.text = String.format("%.2f%%", mList[position].abu)
-        holder.pk.text = String.format("%.2f%%", mList[position].pk)
-        holder.lk.text = String.format("%.2f%%", mList[position].lk)
-        holder.sk.text = String.format("%.2f%%", mList[position].sk)
-        holder.betn.text = String.format("%.2f%%", mList[position].betn)
-        holder.tdn.text = String.format("%.2f%%", mList[position].tdn)
-        holder.ca.text = String.format("%.2f%%", mList[position].ca)
-        holder.p.text = String.format("%.2f%%", mList[position].p)
-        holder.metana.text = String.format("%.2f CO2eq", mList[position].metana)
+        holder.bk.text = String.format("BK: %.2f%%", mList[position].bahanKering)
+        holder.abu.text = String.format("Abu: %.2f%%", mList[position].abu)
+        holder.pk.text = String.format("PK: %.2f%%", mList[position].pk)
+        holder.lk.text = String.format("LK: %.2f%%", mList[position].lk)
+        holder.sk.text = String.format("SK: %.2f%%", mList[position].sk)
+        holder.betn.text = String.format("BETN: %.2f%%", mList[position].betn)
+        holder.tdn.text = String.format("TDN: %.2f%%", mList[position].tdn)
+        holder.ca.text = String.format("Ca: %.2f%%", mList[position].ca)
+        holder.p.text = String.format("P: %.2f%%", mList[position].p)
+        holder.metana.text = String.format("Metana: %.2f CO2eq", mList[position].metana)
 
         val isExpanded : Boolean = mList[position].isSelected
         holder.bk.visibility = if(isExpanded) View.VISIBLE else View.GONE
