@@ -56,7 +56,7 @@ class LihatKandunganNutrisi : AppCompatActivity() {
         tdn.text = String.format("%.3f%%", mList[6])
         ca.text = String.format("%.3f%%", mList[7])
         p.text = String.format("%.3f%%", mList[8])
-        metana.text = String.format("%.3f%%", mList[9])
+        metana.text = String.format("%.3f", mList[9])
         harga.text = String.format("Rp%.2f,-", mList[10])
 
         homeButton = findViewById(R.id.homeButton)
