@@ -2,8 +2,8 @@
     <string name="app_name">My Application</string>
     <string name="index_content_description">Index</string>
     <string name="label_button">label_button</string>
-    <string name="sign_in">sign_in</string>
-    <string name="sign_up">sign_up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
     <string name="page_sign_in">page_sign_in</string>
     <string name="back_button">back_button</string>
     <string name="sign_up_button">Sign Up</string>
@@ -65,6 +65,18 @@
     <string name="default_p">0.000%</string>
     <string name="default_metana">0</string>
     <string name="default_harga">Rp0000.00</string>
+    <string name="judul_index">Optimalkan Ransum,\nKurangi Emisi Metana</string>
+    <string name="judul_index2">Temukan Optimasi\nFormulasi Ransum</string>
+    <string name="hai">Hai, User\nMari kita jelajahi pakan ternak\nberkelanjutan</string>
+    <string name="container1">Berisi data\nbahan-bahan pakan</string>
+    <string name="informasi_pakan">Informasi Pakan</string>
+    <string name="buat_formualasi">Buat formulasi\nanda disini</string>
+    <string name="market">Market</string>
+    <string name="container3">Untuk transaksi\nbahan pakan</string>
+    <string name="metana">Metana</string>
+    <string name="container4">Informasi \nterkait metana</string>
+    <string name="konsentrat">Konsentrat</string>
+    <string name="mineral">Mineral</string>
 
 
 </resources>

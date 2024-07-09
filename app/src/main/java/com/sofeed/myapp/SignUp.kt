@@ -8,7 +8,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 import android.content.Intent
+import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import com.google.firebase.auth.userProfileChangeRequest
@@ -17,7 +19,8 @@ class SignUp : AppCompatActivity() {
     private lateinit var editPersonName: EditText
     private lateinit var editEmail: EditText
     private lateinit var editPassword: EditText
-    private lateinit var signUpButton: ImageButton
+    private lateinit var signUpButton: Button
+    private lateinit var backButton: ImageView
 
     private var firebaseAuth = FirebaseAuth.getInstance()
 
@@ -42,6 +45,7 @@ class SignUp : AppCompatActivity() {
         editEmail = findViewById(R.id.email)
         editPassword  = findViewById(R.id.password)
         signUpButton = findViewById(R.id.signUpButton)
+        backButton = findViewById(R.id.backButton)
 
         signUpButton.setOnClickListener{
             if(editPersonName.text.isNotEmpty() && editPassword.text.isNotEmpty() && editEmail.text.isNotEmpty()){
@@ -50,6 +54,10 @@ class SignUp : AppCompatActivity() {
             else{
                 Toast.makeText(this,"Lengkapi dulu data Anda", LENGTH_SHORT).show()
             }
+        }
+
+        backButton.setOnClickListener{
+            finish()
         }
     }
 

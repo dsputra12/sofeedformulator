@@ -60,7 +60,10 @@ class HomePage2 : Fragment() {
         val firebaseUser = firebaseAuth.currentUser
 
         if (firebaseUser != null) {
-            binding.namaUser.text = firebaseUser.displayName
+            val username = firebaseUser.displayName
+            val sambutan = "Hai, User\nMari kita jelajahi pakan ternak\nberkelanjutan"
+            val sambutan_baru = sambutan.replace("User", username ?: "User")
+            binding.hai.text = sambutan_baru
         } else {
             startActivity(Intent(requireContext(), SignIn::class.java))
             activity?.finish()

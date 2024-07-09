@@ -5,8 +5,11 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.activity.enableEdgeToEdge
@@ -26,9 +29,11 @@ import com.google.firebase.auth.GoogleAuthProvider
 class SignIn : AppCompatActivity() {
     private lateinit var editEmail: EditText
     private lateinit var editPassword: EditText
-    private lateinit var signInButton: ImageButton
+    private lateinit var signInButton: Button
     private lateinit var googleButton: ImageButton
     private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var backButton : ImageView
+    private lateinit var signUpButton: TextView
 
     private var firebaseAuth = FirebaseAuth.getInstance()
 
@@ -67,6 +72,8 @@ class SignIn : AppCompatActivity() {
         editPassword  = findViewById(R.id.password)
         signInButton = findViewById(R.id.signInButton)
         googleButton = findViewById(R.id.googleButton)
+        backButton = findViewById(R.id.backButton)
+        signUpButton = findViewById(R.id.signUpButton)
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -88,6 +95,12 @@ class SignIn : AppCompatActivity() {
                 val signInIntent = googleSignInClient.signInIntent
                 googleSignInLauncher.launch(signInIntent)
             }
+        }
+        backButton.setOnClickListener{
+            finish()
+        }
+        signUpButton.setOnClickListener{
+            startActivity(Intent(this, SignUp::class.java))
         }
     }
 
