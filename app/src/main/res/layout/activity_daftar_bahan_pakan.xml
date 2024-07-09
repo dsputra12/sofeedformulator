@@ -5,13 +5,16 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DaftarBahanPakan">
+    tools:context=".DaftarBahanPakan"
+    android:focusableInTouchMode="true"
+    >
 
     <ImageView
         android:id="@+id/myImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/homepage"
         android:scaleType="fitXY"
         android:src="@drawable/homepage_pendek"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,41 +24,121 @@
         />
 
     <Button
-        android:id="@+id/bahanPakan"
+        android:id="@+id/BahanFormulasi"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="Daftar Bahan Pakan"
-        android:fontFamily="@font/nunitobold"
-        android:backgroundTint="@color/hijau_tua"
-        android:textColor="@color/white"
         android:layout_marginStart="50dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginTop="40dp"
-        android:maxWidth="20dp"
-        android:textSize="24dp"
+        android:backgroundTint="@color/hijau_tua"
         android:clickable="false"
-        />
+        android:fontFamily="@font/nunitobold"
+        android:maxWidth="20dp"
+        android:text="Bahan Formulasi"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/BahanFormulasi">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchBahan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/BahanFormulasi"
+            app:queryBackground="@android:color/transparent"
+            app:queryHint="Search here..." />
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerBahan"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/Kembali"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/materialCardView" />
+
+
 
     <Button
-        android:id="@+id/back_button"
-        android:layout_width="0dp"
+        android:id="@+id/Kembali"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:text="Kembali"
         android:fontFamily="@font/nunitobold"
         android:backgroundTint="@color/hijau_tua"
-        android:textColor="@color/white"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="20dp"
-        android:maxWidth="20dp"
-        android:textSize="24dp"
-        android:clickable="true"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="10dp"
+        android:paddingHorizontal="40dp"/>
+
+    <Button
+        android:id="@+id/Konsentrat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/not_selected"
+        android:fontFamily="@font/nunitobold"
+        android:text="@string/konsentrat"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@id/materialCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toEndOf="@id/Hijauan"
+        app:layout_constraintTop_toBottomOf="@+id/BahanFormulasi"
+        app:layout_constraintVertical_bias="0.777" />
+
+    <Button
+        android:id="@+id/Mineral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/not_selected"
+        android:fontFamily="@font/nunitobold"
+        android:text="@string/mineral"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/materialCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toEndOf="@id/Konsentrat"
+        app:layout_constraintTop_toBottomOf="@+id/BahanFormulasi"
+        app:layout_constraintVertical_bias="0.777" />
+
+    <Button
+        android:id="@+id/Hijauan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/not_selected"
+        android:fontFamily="@font/nunitobold"
+        android:text="Hijauan"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/materialCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BahanFormulasi"
+        app:layout_constraintVertical_bias="0.777" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

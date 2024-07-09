@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    app:cardUseCompatPadding="true"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="10dp"
+    app:cardElevation="8dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/descLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/gambarBahan"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/pakan_hijauan" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/namaBahan"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/nunitobold"
+                android:text="@string/rumput_gajah"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tipeBahan"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="85dp"
+                android:fontFamily="@font/nunitobold"
+                android:text="Pakan Hijauan"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/hargaBahan"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="85dp"
+                android:fontFamily="@font/nunitobold"
+                android:text="Harga Pakan: "
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/tipeBahan"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nilaiBahan"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="48dp"
+                android:fontFamily="@font/nunitobold"
+                android:text="Rp. 1000"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/hargaBahan"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/bahanKering"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BK:"
+            android:fontFamily="@font/nunitobold"
+            android:paddingStart="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/descLayout" />
+
+        <TextView
+            android:id="@+id/abu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitobold"
+            android:text="Abu:"
+            app:layout_constraintStart_toStartOf="@id/metan"
+            app:layout_constraintTop_toBottomOf="@id/descLayout" />
+
+        <TextView
+            android:id="@+id/pk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PK:"
+            android:fontFamily="@font/nunitobold"
+            android:paddingStart="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bahanKering" />
+
+        <TextView
+            android:id="@+id/lk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitobold"
+            android:text="LK:"
+            app:layout_constraintStart_toStartOf="@id/metan"
+            app:layout_constraintTop_toBottomOf="@id/abu" />
+
+        <TextView
+            android:id="@+id/sk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SK:"
+            android:fontFamily="@font/nunitobold"
+            android:paddingStart="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pk" />
+
+        <TextView
+            android:id="@+id/tdn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitobold"
+            android:text="TDN:"
+            app:layout_constraintStart_toStartOf="@id/metan"
+            app:layout_constraintTop_toBottomOf="@id/lk" />
+
+        <TextView
+            android:id="@+id/ca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ca:"
+            android:fontFamily="@font/nunitobold"
+            android:paddingStart="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sk" />
+
+        <TextView
+            android:id="@+id/p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitobold"
+            android:text="P:"
+            app:layout_constraintStart_toStartOf="@id/metan"
+            app:layout_constraintTop_toBottomOf="@id/tdn" />
+
+        <TextView
+            android:id="@+id/betn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BETN:"
+            android:fontFamily="@font/nunitobold"
+            android:paddingStart="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ca" />
+
+        <TextView
+            android:id="@+id/metan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitobold"
+            android:text="Metana:"
+            android:paddingEnd="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/p" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
