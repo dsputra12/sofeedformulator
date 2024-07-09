@@ -1,5 +1,6 @@
 package com.sofeed.myapp
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.text.Editable
 import android.text.TextWatcher
@@ -34,11 +35,12 @@ class HasilAdapter(context: Context, private var mList: ArrayList<HasilData>) :
         return mList.size
     }
 
+    @SuppressLint("DefaultLocale")
     override fun onBindViewHolder(holder: HasilViewHolder, position: Int) {
         holder.namaHasil.text = mList[position].hasilProses.nama
         val haruga = (mList[position].hasilProses.harga * mList[position].persen) / 100
-        holder.hargaHasil.text = "Rp. $haruga"
-        holder.persen.text = mList[position].persen.toString()
+        holder.hargaHasil.text = String.format("Rp%.2f",haruga)
+        holder.persen.text = String.format("%.2f%%",mList[position].persen)
     }
 
 }

@@ -46,15 +46,10 @@ class HasilFormulasi : AppCompatActivity() {
         // Check if hewan and data are not null before using them
         if (hewan != null && data != null) {
             mList = LinPro.calculate(hewan, data)
-        } else {
-            mList = ArrayList()
-            Log.e("HasilFormulasi", "hewan or data is null")
         }
 
-        if (mList.isNotEmpty()) {
-            mList.forEach { i -> Toast.makeText(this, "Item: ${i.persen}", Toast.LENGTH_SHORT).show() }
-        } else {
-            Toast.makeText(this, "Item: Kosong", Toast.LENGTH_SHORT).show()
+        if (mList.isEmpty()) {
+            Toast.makeText(this, "Infeasible", Toast.LENGTH_SHORT).show()
         }
 
         recyclerView = findViewById(R.id.recyclerViewHasil)
@@ -69,7 +64,28 @@ class HasilFormulasi : AppCompatActivity() {
             finish()
         }
         nextButton.setOnClickListener {
-            startActivity(Intent(this, LihatKandunganNutrisi::class.java))
+            if(mList.isEmpty()){
+                Toast.makeText(this, "Infeasible", Toast.LENGTH_SHORT).show()
+            }else{
+                val hasilNutrisi = DoubleArray(11)
+                for(i in mList)
+                {
+                    hasilNutrisi[0] += ((i.hasilProses.bahanKering * i.persen)/100)
+                    hasilNutrisi[1] += ((i.hasilProses.abu * i.persen)/100)
+                    hasilNutrisi[2] += ((i.hasilProses.pk*i.persen)/100)
+                    hasilNutrisi[3] += ((i.hasilProses.lk*i.persen)/100)
+                    hasilNutrisi[4] += ((i.hasilProses.sk*i.persen)/100)
+                    hasilNutrisi[5] += ((i.hasilProses.betn*i.persen)/100)
+                    hasilNutrisi[6] += ((i.hasilProses.tdn*i.persen)/100)
+                    hasilNutrisi[7] += ((i.hasilProses.ca*i.persen)/100)
+                    hasilNutrisi[8] += ((i.hasilProses.p*i.persen)/100)
+                    hasilNutrisi[9] += ((i.hasilProses.metana*i.persen)/100)
+                    hasilNutrisi[10] += ((i.hasilProses.harga*i.persen)/100)
+                }
+                val hasilIntent = Intent(this, LihatKandunganNutrisi::class.java)
+                hasilIntent.putExtra("hasil",hasilNutrisi)
+                startActivity(hasilIntent)
+            }
         }
     }
 }
