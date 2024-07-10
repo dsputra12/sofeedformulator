@@ -20,94 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/iconList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/button_icon"
-        app:layout_constraintTop_toBottomOf="@id/myImageView"
-        android:contentDescription="@string/list_icon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="306dp"
-        android:layout_marginTop="-86dp"
-        />
-
-    <Button
-        android:id="@+id/EditProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/edit_profile"
-        android:fontFamily="@font/nunitobold"
-        app:layout_constraintTop_toBottomOf="@id/myImageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@android:color/transparent"
-        android:textColor="@color/black"
-        android:layout_marginEnd="124dp"
-        android:layout_marginTop="-86dp"
-        />
-
-    <Button
-        android:id="@+id/button_saved_formulation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/saved_formulation"
-        android:fontFamily="@font/nunitobold"
-        app:layout_constraintTop_toBottomOf="@id/EditProfile"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@android:color/transparent"
-        android:textColor="@color/black"
-        android:layout_marginEnd="76dp"
-        android:layout_marginTop="29dp"
-        />
-
-    <Button
-        android:id="@+id/button_change_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/change_password"
-        android:fontFamily="@font/nunitobold"
-        app:layout_constraintTop_toBottomOf="@id/button_saved_formulation"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@android:color/transparent"
-        android:textColor="@color/black"
-        android:layout_marginEnd="76dp"
-        android:layout_marginTop="29dp"
-        />
-
-    <Button
-        android:id="@+id/button_settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/settings"
-        android:fontFamily="@font/nunitobold"
-        app:layout_constraintTop_toBottomOf="@id/button_change_password"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@android:color/transparent"
-        android:textColor="@color/black"
-        android:layout_marginEnd="136dp"
-        android:layout_marginTop="29dp"
-        />
-
-    <Button
-        android:id="@+id/button_logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/logout"
-        android:fontFamily="@font/nunitobold"
-        app:layout_constraintTop_toBottomOf="@id/button_settings"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@android:color/transparent"
-        android:textColor="@color/black"
-        android:layout_marginEnd="136dp"
-        android:layout_marginTop="29dp"
-        />
-
     <!-- Outer Circle -->
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/outer_circle"
@@ -117,10 +29,11 @@
         android:background="@android:color/white"
         android:scaleType="centerCrop"
         app:shapeAppearanceOverlay="@style/OuterCircle"
-        app:layout_constraintTop_toBottomOf="@id/myImageView"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="-340dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.11"
         />
 
     <!-- Inner Circle -->
@@ -138,33 +51,167 @@
         app:layout_constraintEnd_toEndOf="@id/outer_circle"
         />
 
-    <Button
-        android:id="@+id/edit_picture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/edit_picture"
-        android:fontFamily="@font/nunitobold"
-        android:onClick="editPicture"
-        app:layout_constraintTop_toBottomOf="@id/myImageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@android:color/transparent"
-        android:textColor="@color/black"
-        android:layout_marginTop="-230dp"
-        />
-
     <TextView
         android:id="@+id/showUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/edit_picture"
+        app:layout_constraintTop_toBottomOf="@id/outer_circle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/user_name"
-        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.03"
         android:fontFamily="@font/nunitobold"
         android:textSize="24sp"
         />
+
+    <ImageView
+        android:id="@+id/up1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/up1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintVertical_bias="0.45"
+        />
+
+    <TextView
+        android:id="@+id/editProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_profile"
+        android:fontFamily="@font/nunitobold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf ="@id/up1"
+        app:layout_constraintVertical_bias="0.45"
+        app:layout_constraintHorizontal_bias="0.06"
+        android:clickable="true"
+        />
+
+    <ImageView
+        android:id="@+id/up2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/up1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/up2"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintVertical_bias="0.1"
+        />
+
+    <TextView
+        android:id="@+id/feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/feedback"
+        android:fontFamily="@font/nunitobold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/editProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf ="@id/up2"
+        app:layout_constraintVertical_bias="0.15"
+        app:layout_constraintHorizontal_bias="0.06"
+        android:clickable="true"
+        />
+
+    <ImageView
+        android:id="@+id/up3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/up3"
+        app:layout_constraintTop_toBottomOf="@id/up2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintVertical_bias="0.1"
+        />
+
+    <TextView
+        android:id="@+id/change_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change_password"
+        android:fontFamily="@font/nunitobold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/feedback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf ="@id/up3"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.1"
+        android:clickable="true"
+        />
+
+    <ImageView
+        android:id="@+id/up4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/up4"
+        app:layout_constraintTop_toBottomOf="@id/up3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintVertical_bias="0.1"
+        />
+
+    <TextView
+        android:id="@+id/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        android:fontFamily="@font/nunitobold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/change_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf ="@id/up4"
+        app:layout_constraintVertical_bias="0.18"
+        app:layout_constraintHorizontal_bias="0.06"
+        android:clickable="true"
+        />
+
+    <ImageView
+        android:id="@+id/up5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/up5"
+        app:layout_constraintTop_toBottomOf="@id/up4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintVertical_bias="0.1"
+        />
+
+    <TextView
+        android:id="@+id/button_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/logout"
+        android:fontFamily="@font/nunitobold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf ="@id/up4"
+        app:layout_constraintVertical_bias="0.87"
+        app:layout_constraintHorizontal_bias="0.06"
+        android:clickable="true"
+        />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

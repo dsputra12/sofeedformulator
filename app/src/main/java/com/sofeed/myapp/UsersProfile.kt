@@ -1,11 +1,14 @@
 package com.sofeed.myapp
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.findViewTreeViewModelStoreOwner
 import androidx.navigation.fragment.findNavController
@@ -16,9 +19,12 @@ import com.sofeed.myapp.databinding.FragmentUsersProfileBinding
 
 class UsersProfile : Fragment() {
     private lateinit var binding: FragmentUsersProfileBinding
-    private lateinit var logout : Button
-    private lateinit var editProfile : Button
+    private lateinit var logout : TextView
+    private lateinit var editProfile : TextView
     private val firebaseAuth = FirebaseAuth.getInstance()
+    private lateinit var feedbackButton : TextView
+    private lateinit var settingsButton: TextView
+    private lateinit var changePassword: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,9 +56,26 @@ class UsersProfile : Fragment() {
             startActivity(Intent(requireContext(), MainActivity::class.java))
         }
 
-        editProfile = view.findViewById(R.id.EditProfile)
+        editProfile = view.findViewById(R.id.editProfile)
         editProfile.setOnClickListener {
             navigateToEditProfile()
+        }
+
+        feedbackButton = view.findViewById(R.id.feedback)
+        feedbackButton.setOnClickListener {
+            val url = "https://forms.gle/s9Y2tSZwULWeRkJi8"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+        changePassword = view.findViewById(R.id.change_password)
+        changePassword.setOnClickListener{
+            showBelumTersedia(view)
+        }
+
+        settingsButton = view.findViewById(R.id.settings)
+        settingsButton.setOnClickListener{
+            showBelumTersedia(view)
         }
   }
 
@@ -77,5 +100,9 @@ class UsersProfile : Fragment() {
             .replace(R.id.frame_layout, editProfileFragment)
             .addToBackStack(null) // Optional: Add to back stack for back navigation
             .commit()
+    }
+
+    private fun showBelumTersedia(view: View){
+        Toast.makeText(view.context, "Fitur ini belum tersedia!", Toast.LENGTH_SHORT).show()
     }
 }

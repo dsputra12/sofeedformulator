@@ -53,7 +53,7 @@ class LakukanFormulasi : AppCompatActivity() {
             WindowInsetsCompat.CONSUMED
         }
 
-        val items = listOf("Sapi Pedaging", "Sapi Perah")
+        val items = listOf("Sapi Pedaging", "Sapi Perah", "Kambing", "Domba")
 
         val autoComplete : AutoCompleteTextView = findViewById(R.id.autoComplete)
 
