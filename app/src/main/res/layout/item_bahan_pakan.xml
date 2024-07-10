@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/rumput_gajah"
-            android:fontFamily="@font/nunitobold"
+            android:fontFamily="@font/nunitoextrabold"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -49,11 +49,11 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Pakan Hijauan"
-            android:fontFamily="@font/nunitobold"
+            android:fontFamily="@font/nunitosemibold"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cardView"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="85dp"
+            android:layout_marginEnd="120dp"
             android:layout_marginTop="25dp"
             >
         </TextView>
@@ -64,12 +64,13 @@
             android:layout_height="match_parent"
             android:layout_marginTop="44dp"
             android:layout_marginEnd="85dp"
-            android:fontFamily="@font/nunitobold"
+            android:fontFamily="@font/nunitosemibold"
             android:text="Harga Pakan: "
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@id/tipe_pakan"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <EditText
             android:id="@+id/nilai_harga"
