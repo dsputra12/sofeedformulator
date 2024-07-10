@@ -40,6 +40,7 @@ class LakukanFormulasi : AppCompatActivity() {
 
     //untuk recycler view
     private var mList = ArrayList<FormulasiData>()
+    private var hewan = DoubleArray(18)
     private lateinit var saya: FormulasiAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,98 +54,8 @@ class LakukanFormulasi : AppCompatActivity() {
             WindowInsetsCompat.CONSUMED
         }
 
-        val items = listOf("Sapi Pedaging", "Sapi Perah", "Kambing", "Domba")
 
-        val autoComplete : AutoCompleteTextView = findViewById(R.id.autoComplete)
-
-        val adapter = ArrayAdapter(this, R.layout.jenis_hewan, items)
-        autoComplete.setAdapter(adapter)
-
-        val hewan = DoubleArray(18)
-
-        autoComplete.onItemClickListener = AdapterView.OnItemClickListener {
-                adapterView, view, i, l ->
-            val itemSelected = adapterView.getItemAtPosition(i)
-            if (itemSelected == "Sapi Pedaging"){
-                hewan[0] = 86.0
-                hewan[1] = 0.0
-                hewan[2] = 13.0
-                hewan[3] = 0.0
-                hewan[4] = 0.0
-                hewan[5] = 0.0
-                hewan[6] = 68.0
-                hewan[7] = 0.6
-                hewan[8] = 0.4
-                hewan[9] = 100.0
-                hewan[10] = 100.0
-                hewan[11] = 100.0
-                hewan[12] = 7.0
-                hewan[13] = 100.0
-                hewan[14] = 100.0
-                hewan[15] = 100.0
-                hewan[16] = 1.2
-                hewan[17] = 0.8
-            }else if(itemSelected == "Sapi Perah"){
-                hewan[0] = 86.0
-                hewan[1] = 0.0
-                hewan[2] = 18.0
-                hewan[3] = 0.0
-                hewan[4] = 0.0
-                hewan[5] = 0.0
-                hewan[6] = 68.0
-                hewan[7] = 0.8
-                hewan[8] = 0.4
-                hewan[9] = 100.0
-                hewan[10] = 100.0
-                hewan[11] = 100.0
-                hewan[12] = 7.0
-                hewan[13] = 100.0
-                hewan[14] = 100.0
-                hewan[15] = 100.0
-                hewan[16] = 1.3
-                hewan[17] = 0.8
-            }else if(itemSelected == "Kambing"){
-                hewan[0] = 0.0
-                hewan[1] = 0.0
-                hewan[2] = 14.0
-                hewan[3] = 0.0
-                hewan[4] = 0.0
-                hewan[5] = 0.0
-                hewan[6] = 65.0
-                hewan[7] = 0.3
-                hewan[8] = 0.4
-                hewan[9] = 100.0
-                hewan[10] = 9.0
-                hewan[11] = 100.0
-                hewan[12] = 7.0
-                hewan[13] = 100.0
-                hewan[14] = 100.0
-                hewan[15] = 100.0
-                hewan[16] = 0.8
-                hewan[17] = 100.0
-            }else{
-                hewan[0] = 0.0
-                hewan[1] = 0.0
-                hewan[2] = 10.0
-                hewan[3] = 0.0
-                hewan[4] = 0.0
-                hewan[5] = 0.0
-                hewan[6] = 60.0
-                hewan[7] = 0.3
-                hewan[8] = 0.2
-                hewan[9] = 100.0
-                hewan[10] = 8.0
-                hewan[11] = 100.0
-                hewan[12] = 7.0
-                hewan[13] = 100.0
-                hewan[14] = 100.0
-                hewan[15] = 100.0
-                hewan[16] = 0.8
-                hewan[17] = 100.0
-            }
-            Toast.makeText(this, "Item: $itemSelected", Toast.LENGTH_SHORT).show()
-        }
-
+        hewan = intent.getDoubleArrayExtra("hewan")!!
         recyclerView = findViewById(R.id.recyclerView)
         searchView = findViewById(R.id.searchView)
         button = findViewById(R.id.buttonFormulasi)
