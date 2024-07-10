@@ -31,17 +31,13 @@ class Formulasi : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val mList = ArrayList<FormulasiData>()
-
-
         val button1: Button = view.findViewById(R.id.LakukanFormulasi)
         val button2: Button = view.findViewById(R.id.RekapFormulasi)
 
         enableEdgeToEdge(binding.root)
 
         button1.setOnClickListener {
-            val intent = Intent(requireContext(), LakukanFormulasi::class.java)
-            intent.putParcelableArrayListExtra("mList", mList)
+            val intent = Intent(requireContext(), PilihHewan::class.java)
             startActivity(intent)
         }
     }

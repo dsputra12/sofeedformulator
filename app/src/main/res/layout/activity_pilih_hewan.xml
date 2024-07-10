@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    tools:context=".LakukanFormulasi">
+
+    <ImageView
+        android:id="@+id/myImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/homepage"
+        android:scaleType="fitXY"
+        android:src="@drawable/homepage_pendek"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/PilihHewan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="@color/hijau_tua"
+        android:clickable="false"
+        android:fontFamily="@font/nunitobold"
+        android:maxWidth="20dp"
+        android:text="Pilih Hewan"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/switchItem"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/white"
+        app:boxBackgroundMode="filled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/PilihHewan"
+        app:layout_constraintVertical_bias="0.052">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoComplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/pilih_hewan"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/SelectPakan"
+        android:layout_width="187dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="60dp"
+        android:backgroundTint="@color/hijau_tua"
+        android:fontFamily="@font/nunitobold"
+        android:paddingHorizontal="40dp"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/bahanKering"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunitobold"
+        android:layout_marginStart="40dp"
+        android:paddingTop="20dp"
+        android:text="Bahan Kering:"
+        android:textSize="8pt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switchItem" />
+
+    <TextView
+        android:id="@+id/abu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:fontFamily="@font/nunitobold"
+        android:paddingTop="20dp"
+        android:text="Abu:"
+        android:textSize="8pt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bahanKering"
+        app:layout_constraintTop_toBottomOf="@id/switchItem" />
+
+    <TextView
+        android:id="@+id/pk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunitobold"
+        android:paddingTop="50dp"
+        android:text="PK:"
+        android:textSize="8pt"
+        app:layout_constraintStart_toStartOf="@id/bahanKering"
+        app:layout_constraintTop_toBottomOf="@+id/bahanKering" />
+
+    <TextView
+        android:id="@+id/lk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunitobold"
+        android:paddingTop="50dp"
+        android:text="LK:"
+        android:textSize="8pt"
+        app:layout_constraintTop_toBottomOf="@id/abu"
+        app:layout_constraintStart_toStartOf="@id/abu"
+        tools:layout_editor_absoluteX="234dp" />
+
+    <TextView
+        android:id="@+id/sk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunitobold"
+        android:paddingTop="50dp"
+        android:text="SK:"
+        android:textSize="8pt"
+        app:layout_constraintStart_toStartOf="@id/bahanKering"
+        app:layout_constraintTop_toBottomOf="@id/pk" />
+
+    <TextView
+        android:id="@+id/tdn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunitobold"
+        android:paddingTop="50dp"
+        android:text="TDN:"
+        android:textSize="8pt"
+        app:layout_constraintStart_toStartOf="@id/abu"
+        app:layout_constraintTop_toBottomOf="@id/lk"
+        tools:layout_editor_absoluteX="234dp" />
+
+    <TextView
+        android:id="@+id/ca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunitobold"
+        android:paddingTop="50dp"
+        android:text="Ca:"
+        android:textSize="8pt"
+        app:layout_constraintStart_toStartOf="@id/bahanKering"
+        app:layout_constraintTop_toBottomOf="@+id/sk" />
+
+    <TextView
+        android:id="@+id/p"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunitobold"
+        android:paddingTop="50dp"
+        app:layout_constraintStart_toStartOf="@id/abu"
+        android:text="P:"
+        android:textSize="8pt"
+        app:layout_constraintTop_toBottomOf="@id/tdn"
+        tools:layout_editor_absoluteX="234dp" />
+
+    <TextView
+        android:id="@+id/betn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunitobold"
+        android:paddingTop="50dp"
+        android:text="BETN:"
+        android:textSize="8pt"
+        app:layout_constraintStart_toStartOf="@id/bahanKering"
+        app:layout_constraintTop_toBottomOf="@+id/ca" />
+
+    <TextView
+        android:id="@+id/infoTambahan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:fontFamily="@font/nunitobold"
+        android:text="Satuan dalam %"
+        android:textSize="8pt"
+        app:layout_constraintStart_toStartOf="@id/abu"
+        app:layout_constraintTop_toBottomOf="@id/p" />
+
+    <EditText
+        android:id="@+id/BKValue"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/nunitobold"
+        android:paddingTop="10dp"
+        android:textSize="8pt"
+        app:layout_constraintStart_toStartOf="@id/bahanKering"
+        app:layout_constraintTop_toBottomOf="@id/bahanKering"
+        android:hint="Min" />
+
+    <EditText
+        android:id="@+id/BKValueMax"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/nunitobold"
+        android:paddingTop="10dp"
+        android:textSize="8pt"
+        app:layout_constraintStart_toEndOf="@id/BKValue"
+        app:layout_constraintTop_toBottomOf="@id/bahanKering"
+        android:hint="Max" />
+
+    <EditText
+        android:id="@+id/AbuValue"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/nunitobold"
+        android:paddingTop="10dp"
+        android:hint="Min"
+        android:textSize="8pt"
+        app:layout_constraintStart_toStartOf="@id/abu"
+        app:layout_constraintTop_toBottomOf="@id/abu" />
+
+    <EditText
+        android:id="@+id/AbuValueMax"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:fontFamily="@font/nunitobold"
+        android:textSize="8pt"
+        app:layout_constraintStart_toEndOf="@id/AbuValue"
+        app:layout_constraintTop_toBottomOf="@id/abu"
+        android:hint="Max" />
+
+    <EditText
+        android:id="@+id/PKValue"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:fontFamily="@font/nunitobold"
+        android:textSize="8pt"
+        app:layout_constraintStart_toStartOf="@id/pk"
+        app:layout_constraintTop_toBottomOf="@id/pk"
+        android:hint="Min" />
+
+    <EditText
+        android:id="@+id/PKValueMax"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:textSize="8pt"
+        android:fontFamily="@font/nunitobold"
+        app:layout_constraintStart_toEndOf="@id/PKValue"
+        app:layout_constraintTop_toBottomOf="@id/pk"
+        android:hint="Max" />
+
+    <EditText
+        android:id="@+id/LKValue"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/nunitobold"
+        android:paddingTop="10dp"
+        android:hint="Min"
+        android:textSize="8pt"
+        app:layout_constraintStart_toStartOf="@id/lk"
+        app:layout_constraintTop_toBottomOf="@id/lk" />
+
+    <EditText
+        android:id="@+id/LKValueMax"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:textSize="8pt"
+        android:fontFamily="@font/nunitobold"
+        app:layout_constraintStart_toEndOf="@id/LKValue"
+        app:layout_constraintTop_toBottomOf="@id/lk"
+        android:hint="Max" />
+
+    <EditText
+        android:id="@+id/SKValue"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:textSize="8pt"
+        android:fontFamily="@font/nunitobold"
+        app:layout_constraintStart_toStartOf="@id/sk"
+        app:layout_constraintTop_toBottomOf="@id/sk"
+        android:hint="Min" />
+
+    <EditText
+        android:id="@+id/SKValueMax"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:textSize="8pt"
+        android:fontFamily="@font/nunitobold"
+        app:layout_constraintStart_toEndOf="@id/SKValue"
+        app:layout_constraintTop_toBottomOf="@id/sk"
+        android:hint="Max" />
+
+    <EditText
+        android:id="@+id/TDNValue"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/nunitobold"
+        android:paddingTop="10dp"
+        android:hint="Min"
+        android:textSize="8pt"
+        app:layout_constraintStart_toStartOf="@id/tdn"
+        app:layout_constraintTop_toBottomOf="@id/tdn" />
+
+    <EditText
+        android:id="@+id/TDNValueMax"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:textSize="8pt"
+        android:fontFamily="@font/nunitobold"
+        app:layout_constraintStart_toEndOf="@id/TDNValue"
+        app:layout_constraintTop_toBottomOf="@id/tdn"
+        android:hint="Max" />
+
+    <EditText
+        android:id="@+id/CAValue"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:textSize="8pt"
+        android:fontFamily="@font/nunitobold"
+        app:layout_constraintStart_toStartOf="@id/ca"
+        app:layout_constraintTop_toBottomOf="@id/ca"
+        android:hint="Min" />
+
+    <EditText
+        android:id="@+id/CAValueMax"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:textSize="8pt"
+        android:fontFamily="@font/nunitobold"
+        app:layout_constraintStart_toEndOf="@id/CAValue"
+        app:layout_constraintTop_toBottomOf="@id/ca"
+        android:hint="Max" />
+
+    <EditText
+        android:id="@+id/PValue"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/nunitobold"
+        android:paddingTop="10dp"
+        android:hint="Min"
+        android:textSize="8pt"
+        app:layout_constraintStart_toStartOf="@id/p"
+        app:layout_constraintTop_toBottomOf="@id/p" />
+
+    <EditText
+        android:id="@+id/PValueMax"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:textSize="8pt"
+        android:fontFamily="@font/nunitobold"
+        app:layout_constraintStart_toEndOf="@id/PValue"
+        app:layout_constraintTop_toBottomOf="@id/p"
+        android:hint="Max" />
+
+    <EditText
+        android:id="@+id/BETNValue"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:textSize="8pt"
+        android:fontFamily="@font/nunitobold"
+        app:layout_constraintStart_toStartOf="@id/betn"
+        app:layout_constraintTop_toBottomOf="@id/betn"
+        android:hint="Min" />
+
+    <EditText
+        android:id="@+id/BETNValueMax"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:textSize="8pt"
+        android:fontFamily="@font/nunitobold"
+        app:layout_constraintStart_toEndOf="@id/BETNValue"
+        app:layout_constraintTop_toBottomOf="@id/betn"
+        android:hint="Max" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

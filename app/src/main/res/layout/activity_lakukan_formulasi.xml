@@ -27,48 +27,47 @@
         android:id="@+id/PilihBahanFormulasi"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="Pilih Bahan Formulasi"
-        android:fontFamily="@font/nunitobold"
-        android:backgroundTint="@color/hijau_tua"
-        android:textColor="@color/white"
         android:layout_marginStart="50dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginTop="10dp"
-        android:maxWidth="20dp"
-        android:textSize="28dp"
+        android:backgroundTint="@color/hijau_tua"
         android:clickable="false"
-        />
+        android:fontFamily="@font/nunitobold"
+        android:maxWidth="20dp"
+        android:text="Pilih Bahan Formulasi"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="16dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:cardUseCompatPadding="true"
-        app:layout_constraintTop_toBottomOf="@id/PilihBahanFormulasi"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="150dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        >
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/PilihBahanFormulasi">
 
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/searchView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/PilihBahanFormulasi"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="0dp"
-                app:queryHint="Search here..."
-                app:iconifiedByDefault="false"
-                app:queryBackground="@android:color/transparent"
-                />
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/PilihBahanFormulasi"
+            app:queryBackground="@android:color/transparent"
+            app:queryHint="Search here..." />
     </com.google.android.material.card.MaterialCardView>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -80,29 +79,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/materialCardView" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/myImageView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_bias="0.15"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:background="@color/white"
-        app:boxBackgroundMode="filled"
-        >
-        <AutoCompleteTextView
-            android:id="@+id/autoComplete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/pilih_hewan"
-            android:inputType="none">
-        </AutoCompleteTextView>
-    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/buttonFormulasi"
