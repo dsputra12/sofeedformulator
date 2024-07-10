@@ -103,6 +103,6 @@ class UsersProfile : Fragment() {
     }
 
     private fun showBelumTersedia(view: View){
-        Toast.makeText(view.context, "Fitur ini belum tersedia!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(view.context, "Fitur ini masih dalam tahap pengembangan!", Toast.LENGTH_SHORT).show()
     }
 }

@@ -49,8 +49,8 @@
     <string name="pilih_hewan">Pilih ransum hewan ternak</string>
     <string name="formulasikan">Formulasikan</string>
     <string name="hasil_formulasi">Hasil Formulasi</string>
-    <string name="lihat_kandungan">Lihat Kandungan Nutrisi</string>
-    <string name="kembali">Kembali</string>
+    <string name="lihat_kandungan">Lihat Kandungan\nNutrisi</string>
+    <string name="kembali">Kembali ke\nFormulasi</string>
     <string name="kandungan_nutrisi">Kandungan Nutrisi</string>
     <string name="share">Share</string>
     <string name="save">Save</string>
@@ -79,6 +79,7 @@
     <string name="mineral">Mineral</string>
     <string name="feedback">Feedback</string>
     <string name="default_username">Username: exampleuser123</string>
+    <string name="coming_soon">Coming Soon</string>
 
 
 </resources>

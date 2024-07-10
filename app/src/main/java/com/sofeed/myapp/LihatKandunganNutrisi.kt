@@ -3,9 +3,11 @@ package com.sofeed.myapp
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -23,6 +25,8 @@ class LihatKandunganNutrisi : AppCompatActivity() {
     private lateinit var p : TextView
     private lateinit var metana : TextView
     private lateinit var harga : TextView
+    private lateinit var saveButton: Button
+    private lateinit var shareButton: Button
 
     @SuppressLint("DefaultLocale")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,9 +64,18 @@ class LihatKandunganNutrisi : AppCompatActivity() {
         harga.text = String.format("Rp%.2f,-", mList[10])
 
         homeButton = findViewById(R.id.homeButton)
-
         homeButton.setOnClickListener {
             navigateToHomepage()
+        }
+
+        saveButton = findViewById(R.id.saveButton)
+        saveButton.setOnClickListener { view ->
+            showBelumTersedia(view)
+        }
+
+        shareButton = findViewById(R.id.shareButton)
+        shareButton.setOnClickListener {view ->
+            showBelumTersedia(view)
         }
     }
 
@@ -73,5 +86,9 @@ class LihatKandunganNutrisi : AppCompatActivity() {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
         finish()
+    }
+
+    private fun showBelumTersedia(view: View){
+        Toast.makeText(view.context, "Fitur ini masih dalam tahap pengembangan!", Toast.LENGTH_SHORT).show()
     }
 }
