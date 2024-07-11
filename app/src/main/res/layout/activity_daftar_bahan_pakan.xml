@@ -102,12 +102,11 @@
         android:backgroundTint="@color/not_selected"
         android:fontFamily="@font/nunitobold"
         android:text="@string/konsentrat"
-        android:textSize="15dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@id/materialCardView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintEnd_toStartOf="@id/Mineral"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toEndOf="@id/Hijauan"
-        app:layout_constraintTop_toBottomOf="@+id/BahanFormulasi"
         app:layout_constraintVertical_bias="0.777" />
 
     <Button
@@ -117,12 +116,10 @@
         android:backgroundTint="@color/not_selected"
         android:fontFamily="@font/nunitobold"
         android:text="@string/mineral"
-        android:textSize="20dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@id/materialCardView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toEndOf="@id/Konsentrat"
-        app:layout_constraintTop_toBottomOf="@+id/BahanFormulasi"
         app:layout_constraintVertical_bias="0.777" />
 
     <Button
@@ -132,12 +129,11 @@
         android:backgroundTint="@color/not_selected"
         android:fontFamily="@font/nunitobold"
         android:text="Hijauan"
-        android:textSize="20sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@id/materialCardView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintEnd_toStartOf="@id/Konsentrat"
+        app:layout_constraintHorizontal_bias="0.02"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BahanFormulasi"
         app:layout_constraintVertical_bias="0.777" />
 
 

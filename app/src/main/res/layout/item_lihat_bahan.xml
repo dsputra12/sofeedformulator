@@ -101,9 +101,9 @@
             android:id="@+id/bahanKering"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="BK:"
+            android:layout_marginStart="20dp"
             android:fontFamily="@font/nunitobold"
-            android:paddingStart="50dp"
+            android:text="BK:"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/descLayout" />
 
@@ -120,10 +120,9 @@
             android:id="@+id/pk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PK:"
             android:fontFamily="@font/nunitobold"
-            android:paddingStart="50dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="PK:"
+            app:layout_constraintStart_toStartOf="@+id/bahanKering"
             app:layout_constraintTop_toBottomOf="@+id/bahanKering" />
 
         <TextView
@@ -139,10 +138,9 @@
             android:id="@+id/sk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SK:"
             android:fontFamily="@font/nunitobold"
-            android:paddingStart="50dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="SK:"
+            app:layout_constraintStart_toStartOf="@+id/pk"
             app:layout_constraintTop_toBottomOf="@+id/pk" />
 
         <TextView
@@ -158,10 +156,9 @@
             android:id="@+id/ca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ca:"
             android:fontFamily="@font/nunitobold"
-            android:paddingStart="50dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="Ca:"
+            app:layout_constraintStart_toStartOf="@+id/sk"
             app:layout_constraintTop_toBottomOf="@+id/sk" />
 
         <TextView
@@ -177,11 +174,10 @@
             android:id="@+id/betn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="BETN:"
             android:fontFamily="@font/nunitobold"
-            android:paddingStart="50dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ca" />
+            android:text="BETN:"
+            app:layout_constraintStart_toStartOf="@id/ca"
+            app:layout_constraintTop_toBottomOf="@id/ca" />
 
         <TextView
             android:id="@+id/metan"
@@ -189,8 +185,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunitobold"
             android:text="Metana:"
-            android:paddingEnd="50dp"
+            android:layout_marginStart="10dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/betn"
             app:layout_constraintTop_toBottomOf="@id/p" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

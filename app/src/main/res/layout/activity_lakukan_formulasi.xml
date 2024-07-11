@@ -117,7 +117,7 @@
         android:text="@string/konsentrat"
         android:backgroundTint="@color/not_selected"
         android:fontFamily="@font/nunitobold"
-        android:textSize="15dp"
+        android:textSize="15sp"
         app:layout_constraintHorizontal_bias="0.05"
         />
 
@@ -131,7 +131,7 @@
         android:text="@string/mineral"
         android:backgroundTint="@color/not_selected"
         android:fontFamily="@font/nunitobold"
-        android:textSize="15dp"
+        android:textSize="15sp"
         />
 
 
