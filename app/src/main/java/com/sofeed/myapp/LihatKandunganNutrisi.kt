@@ -2,12 +2,16 @@ package com.sofeed.myapp
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -23,6 +27,8 @@ class LihatKandunganNutrisi : AppCompatActivity() {
     private lateinit var p : TextView
     private lateinit var metana : TextView
     private lateinit var harga : TextView
+    private lateinit var saveButton: Button
+    private lateinit var shareButton: Button
 
     @SuppressLint("DefaultLocale")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,9 +66,29 @@ class LihatKandunganNutrisi : AppCompatActivity() {
         harga.text = String.format("Rp%.2f,-", mList[10])
 
         homeButton = findViewById(R.id.homeButton)
-
         homeButton.setOnClickListener {
             navigateToHomepage()
+        }
+
+        saveButton = findViewById(R.id.saveButton)
+        saveButton.setOnClickListener { view ->
+            showBelumTersedia(view)
+        }
+
+        shareButton = findViewById(R.id.shareButton)
+        shareButton.setOnClickListener {view ->
+            showBelumTersedia(view)
+        }
+
+        val metanaValue = mList[9]
+        if (metanaValue <= 15.000){
+            metana.setTextColor(ContextCompat.getColor(this, R.color.hijau_baik))
+        }
+        else if(metanaValue > 15.000 && metanaValue <= 23.000){
+            metana.setTextColor(ContextCompat.getColor(this, R.color.kuning_tua))
+        }
+        else if(metanaValue > 23.000 && metanaValue <= 30.000){
+            metana.setTextColor(ContextCompat.getColor(this, R.color.merah2))
         }
     }
 
@@ -73,5 +99,9 @@ class LihatKandunganNutrisi : AppCompatActivity() {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
         finish()
+    }
+
+    private fun showBelumTersedia(view: View){
+        Toast.makeText(view.context, "Fitur ini masih dalam tahap pengembangan!", Toast.LENGTH_SHORT).show()
     }
 }

@@ -40,6 +40,10 @@ class Formulasi : Fragment() {
             val intent = Intent(requireContext(), PilihHewan::class.java)
             startActivity(intent)
         }
+
+        button2.setOnClickListener {
+            showBelumTersedia(view)
+        }
     }
 
     private fun enableEdgeToEdge(view: View) {
@@ -48,5 +52,9 @@ class Formulasi : Fragment() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             WindowInsetsCompat.CONSUMED
         }
+    }
+
+    private fun showBelumTersedia(view: View){
+        Toast.makeText(view.context, "Fitur ini masih dalam tahap pengembangan!", Toast.LENGTH_SHORT).show()
     }
 }

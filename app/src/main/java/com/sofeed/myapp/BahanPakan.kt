@@ -7,11 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import com.sofeed.myapp.databinding.FragmentBahanPakanBinding
 
 
 class BahanPakan : Fragment() {
-
+    private lateinit var metana: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +29,11 @@ class BahanPakan : Fragment() {
         buttonDaftarBahanPakan.setOnClickListener {
             startActivity(Intent(requireContext(), DaftarBahanPakan::class.java))
         }
+
+        metana = view.findViewById(R.id.Metana)
+        metana.setOnClickListener {
+            showBelumTersedia(view)
+        }
     }
 
     private fun navigateToDaftarBahanPakan(){
@@ -36,5 +42,9 @@ class BahanPakan : Fragment() {
             .replace(R.id.frame_layout, PakanHijauanFragment)
             .addToBackStack(null) // Optional: Add to back stack for back navigation
             .commit()
+    }
+
+    private fun showBelumTersedia(view: View){
+        Toast.makeText(view.context, "Fitur ini masih dalam tahap pengembangan!", Toast.LENGTH_SHORT).show()
     }
 }

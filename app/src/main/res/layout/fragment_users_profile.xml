@@ -33,7 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.11"
+        app:layout_constraintVertical_bias="0.1"
         />
 
     <!-- Inner Circle -->
@@ -60,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/user_name"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.03"
+        app:layout_constraintVertical_bias="0.05"
         android:fontFamily="@font/nunitobold"
         android:textSize="24sp"
         />
@@ -85,13 +85,11 @@
         android:text="@string/edit_profile"
         android:fontFamily="@font/nunitobold"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/up1"
+        app:layout_constraintBottom_toBottomOf="@id/up1"
         app:layout_constraintStart_toEndOf ="@id/up1"
-        app:layout_constraintVertical_bias="0.45"
-        app:layout_constraintHorizontal_bias="0.06"
         android:clickable="true"
+        android:layout_marginLeft="30dp"
         />
 
     <ImageView
@@ -114,13 +112,11 @@
         android:text="@string/feedback"
         android:fontFamily="@font/nunitobold"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/editProfile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/up2"
+        app:layout_constraintBottom_toBottomOf="@id/up2"
         app:layout_constraintStart_toEndOf ="@id/up2"
-        app:layout_constraintVertical_bias="0.15"
-        app:layout_constraintHorizontal_bias="0.06"
         android:clickable="true"
+        android:layout_marginLeft="30dp"
         />
 
     <ImageView
@@ -143,13 +139,11 @@
         android:text="@string/change_password"
         android:fontFamily="@font/nunitobold"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/feedback"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/up3"
+        app:layout_constraintBottom_toBottomOf="@id/up3"
         app:layout_constraintStart_toEndOf ="@id/up3"
-        app:layout_constraintVertical_bias="0.2"
-        app:layout_constraintHorizontal_bias="0.1"
         android:clickable="true"
+        android:layout_marginLeft="30dp"
         />
 
     <ImageView
@@ -172,13 +166,11 @@
         android:text="@string/settings"
         android:fontFamily="@font/nunitobold"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/change_password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/up4"
+        app:layout_constraintBottom_toBottomOf="@id/up4"
         app:layout_constraintStart_toEndOf ="@id/up4"
-        app:layout_constraintVertical_bias="0.18"
-        app:layout_constraintHorizontal_bias="0.06"
         android:clickable="true"
+        android:layout_marginLeft="30dp"
         />
 
     <ImageView
@@ -201,13 +193,11 @@
         android:text="@string/logout"
         android:fontFamily="@font/nunitobold"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf ="@id/up4"
-        app:layout_constraintVertical_bias="0.87"
-        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintTop_toTopOf="@id/up5"
+        app:layout_constraintBottom_toBottomOf="@id/up5"
+        app:layout_constraintStart_toEndOf ="@id/up5"
         android:clickable="true"
+        android:layout_marginLeft="30dp"
         />
 
 

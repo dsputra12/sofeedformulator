@@ -51,7 +51,7 @@
                 android:id="@+id/namaBahan"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/nunitobold"
+                android:fontFamily="@font/nunitoextrabold"
                 android:text="@string/rumput_gajah"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
