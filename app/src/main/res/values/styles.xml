@@ -17,4 +17,10 @@
             @drawable/rounded_rectangle
         </item>
     </style>
+
+    <style name="RoundedRectangle2">
+        <item name="android:background">
+            @drawable/rounded_rectangle2
+        </item>
+    </style>
 </resources>

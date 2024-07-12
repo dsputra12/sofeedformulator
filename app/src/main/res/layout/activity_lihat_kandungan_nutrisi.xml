@@ -36,7 +36,7 @@
                 app:layout_constraintVertical_bias="0.02"
                 android:text="@string/kandungan_nutrisi"
                 android:fontFamily="@font/nunitobold"
-                android:backgroundTint="@color/hijau_tua"
+                android:backgroundTint="@color/hijau_judul"
                 android:textColor="@color/white"
                 android:textSize="28dp"
                 android:clickable="false"

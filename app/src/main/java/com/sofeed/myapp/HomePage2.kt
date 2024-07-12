@@ -61,7 +61,7 @@ class HomePage2 : Fragment() {
 
         if (firebaseUser != null) {
             val username = firebaseUser.displayName
-            val sambutan = "Hai, User\nMari kita jelajahi pakan ternak\nberkelanjutan"
+            val sambutan = "Hai, User!"
             val sambutan_baru = sambutan.replace("User", username ?: "User")
             binding.hai.text = sambutan_baru
         } else {

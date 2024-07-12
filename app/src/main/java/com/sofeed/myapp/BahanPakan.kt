@@ -7,12 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.Toast
 import com.sofeed.myapp.databinding.FragmentBahanPakanBinding
 
 
 class BahanPakan : Fragment() {
-    private lateinit var metana: Button
+    private lateinit var metana: FrameLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +26,7 @@ class BahanPakan : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val buttonDaftarBahanPakan: Button = view.findViewById(R.id.DaftarBahanPakan)
+        val buttonDaftarBahanPakan: FrameLayout = view.findViewById(R.id.DaftarBahanPakan)
         buttonDaftarBahanPakan.setOnClickListener {
             startActivity(Intent(requireContext(), DaftarBahanPakan::class.java))
         }

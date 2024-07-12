@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -31,17 +32,17 @@ class Formulasi : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val button1: Button = view.findViewById(R.id.LakukanFormulasi)
-        val button2: Button = view.findViewById(R.id.RekapFormulasi)
+        val container1: FrameLayout = view.findViewById(R.id.LakukanFormulasi)
+        val container2: FrameLayout = view.findViewById(R.id.RekapFormulasi)
 
         enableEdgeToEdge(binding.root)
 
-        button1.setOnClickListener {
+        container1.setOnClickListener {
             val intent = Intent(requireContext(), PilihHewan::class.java)
             startActivity(intent)
         }
 
-        button2.setOnClickListener {
+        container2.setOnClickListener {
             showBelumTersedia(view)
         }
     }

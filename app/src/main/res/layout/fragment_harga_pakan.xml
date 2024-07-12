@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:text="@string/coming_soon"
         android:fontFamily="@font/nunitobold"
-        android:backgroundTint="@color/hijau_tua"
+        android:backgroundTint="@color/hijau_judul"
         android:textColor="@color/white"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"

@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:text="Nutrisi dan Emisi"
         android:fontFamily="@font/nunitobold"
-        android:backgroundTint="@color/hijau_tua"
+        android:backgroundTint="@color/hijau_judul"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginLeft="40dp"
@@ -39,43 +39,218 @@
         android:clickable="false"
         />
 
-    <Button
+<!--    <Button-->
+<!--        android:id="@+id/DaftarBahanPakan"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/bahanPakan"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:text="Daftar Bahan Pakan"-->
+<!--        android:fontFamily="@font/nunitobold"-->
+<!--        android:backgroundTint="@color/hijau_tua"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        android:maxWidth="20dp"-->
+<!--        android:textSize="24dp"-->
+<!--        android:clickable="true"-->
+<!--        android:layout_marginLeft="40dp"-->
+<!--        android:layout_marginRight="40dp"-->
+<!--        app:layout_constraintVertical_bias="0.1"-->
+<!--        />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/Metana"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/DaftarBahanPakan"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:text="Metana"-->
+<!--        android:fontFamily="@font/nunitobold"-->
+<!--        android:backgroundTint="@color/hijau_tua"-->
+<!--        android:textColor="@color/white"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        android:textSize="24dp"-->
+<!--        android:clickable="true"-->
+<!--        android:layout_marginLeft="40dp"-->
+<!--        android:layout_marginRight="40dp"-->
+<!--        app:layout_constraintVertical_bias="0.1"-->
+<!--        />-->
+
+
+    <FrameLayout
         android:id="@+id/DaftarBahanPakan"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/bahanPakan"
+        android:layout_width="345dp"
+        android:layout_height="140dp"
+        android:background="@drawable/rounded_rectangle2"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Daftar Bahan Pakan"
-        android:fontFamily="@font/nunitobold"
-        android:backgroundTint="@color/hijau_tua"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:maxWidth="20dp"
-        android:textSize="24dp"
+        app:layout_constraintVertical_bias="0.22"
+        style="@style/RoundedRectangle2"
+        android:backgroundTint="@color/hijau_container"
         android:clickable="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        app:layout_constraintVertical_bias="0.1"
-        />
+        >
 
-    <Button
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/crops"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/JudulDaftar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daftar Bahan Pakan"
+                android:fontFamily="@font/nunitoextrabold"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardView"
+                app:layout_constraintHorizontal_bias="0.4"
+                app:layout_constraintVertical_bias="0.2"
+                android:textColor="@color/white"
+                >
+            </TextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/batang"
+                android:layout_width="6dp"
+                android:layout_height="35dp"
+                android:padding="50dp"
+                app:layout_constraintTop_toBottomOf="@id/JudulDaftar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardView"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:cardBackgroundColor="@color/hijau_kecil"
+                app:layout_constraintVertical_bias="0.7"
+                >
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/teks_daftar"
+                android:textSize="12dp"
+                android:fontFamily="@font/nunitobolditalic"
+                android:textColor="@color/hijau_gelap"
+                app:layout_constraintStart_toEndOf="@id/batang"
+                app:layout_constraintTop_toTopOf="@id/batang"
+                app:layout_constraintBottom_toBottomOf="@id/batang"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="-25dp">
+            </TextView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
         android:id="@+id/Metana"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="345dp"
+        android:layout_height="140dp"
+        android:background="@drawable/rounded_rectangle2"
         app:layout_constraintTop_toBottomOf="@id/DaftarBahanPakan"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Metana"
-        android:fontFamily="@font/nunitobold"
-        android:backgroundTint="@color/hijau_tua"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:textSize="24dp"
-        android:clickable="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
         app:layout_constraintVertical_bias="0.1"
-        />
+        style="@style/RoundedRectangle2"
+        android:backgroundTint="@color/hijau_container"
+        android:clickable="true"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/polusi"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/JudulMetana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Metana"
+                android:fontFamily="@font/nunitoextrabold"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardView2"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintVertical_bias="0.2"
+                android:textColor="@color/white"
+                >
+            </TextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/batang2"
+                android:layout_width="6dp"
+                android:layout_height="35dp"
+                android:padding="50dp"
+                app:layout_constraintTop_toBottomOf="@id/JudulMetana"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardView2"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:cardBackgroundColor="@color/hijau_kecil"
+                app:layout_constraintVertical_bias="0.7"
+                >
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/teks_metana"
+                android:textSize="12dp"
+                android:fontFamily="@font/nunitobolditalic"
+                android:textColor="@color/hijau_gelap"
+                app:layout_constraintStart_toEndOf="@id/batang2"
+                app:layout_constraintTop_toTopOf="@id/batang2"
+                app:layout_constraintBottom_toBottomOf="@id/batang2"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="10dp">
+            </TextView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
 
 
 
