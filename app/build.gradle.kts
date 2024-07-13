@@ -12,6 +12,12 @@ android {
             keyAlias = "keySoFeed"
             keyPassword = "ayamgoreng123"
         }
+        create("release"){
+            storeFile = file("C:\\KeyStoreSofeed\\keystore.jks")
+            storePassword = "ayamgoreng123"
+            keyAlias = "keySoFeed"
+            keyPassword = "ayamgoreng123"
+        }
     }
     namespace = "com.sofeed.myapp"
     compileSdk = 34
@@ -20,8 +26,8 @@ android {
         applicationId = "com.sofeed.myapp"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         signingConfig = signingConfigs.getByName("debug")
@@ -39,6 +45,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     buildFeatures{

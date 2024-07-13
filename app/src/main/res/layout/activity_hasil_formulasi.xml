@@ -38,61 +38,72 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    
+    <TextView
+        android:id="@+id/keterangan_peternak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/judul_hasil"
+        android:textAlignment="center"
+        android:fontFamily="@font/nunitobold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/JudulFormulasi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/textView2">
+
+    </TextView>
 
     <Button
         android:id="@+id/LihatKandunganNutrisi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/hijau_tua"
-        android:clickable="false"
-        android:fontFamily="@font/nunitobold"
-        android:text="@string/lihat_kandungan"
-        android:textColor="@color/white"
-        android:textSize="18dp"
+        android:text="Kandungan\nNutrisi"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/back_button"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.98"
+        android:fontFamily="@font/nunitobold"
+        android:textSize="18sp"
+        android:background="@drawable/rounded_button"
+        style="@style/button_lihat"
+        android:layout_marginStart="5dp"
         />
 
     <Button
         android:id="@+id/back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/grey"
-        android:clickable="false"
-        android:fontFamily="@font/nunitobold"
-        android:text="@string/kembali"
-        android:textColor="@color/white"
-        android:textSize="18sp"
+        android:text="Bahan\nFormulasi"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/LihatKandunganNutrisi"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.98"
-        android:layout_marginRight="10dp"
+        style="@style/button_kembali"
+        android:fontFamily="@font/nunitobold"
+        android:textSize="18sp"
+        android:background="@drawable/rounded_button"
         />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="78dp"
+        android:layout_marginEnd="80dp"
         android:text="Bahan"
         android:fontFamily="@font/nunitobold"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/JudulFormulasi" />
+        app:layout_constraintEnd_toStartOf="@id/textView2"
+        app:layout_constraintTop_toTopOf="@id/textView2"
+        />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/nunitobold"
         android:text="Persen"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,17 +113,16 @@
         />
 
     <TextView
-        android:layout_marginTop="20dp"
         android:fontFamily="@font/nunitobold"
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="78dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="80dp"
         android:text="Harga"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/JudulFormulasi" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@id/textView2"
+        app:layout_constraintTop_toTopOf="@id/textView2"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewHasil"

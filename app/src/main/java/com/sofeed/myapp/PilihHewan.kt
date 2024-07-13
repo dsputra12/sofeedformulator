@@ -1,6 +1,7 @@
 package com.sofeed.myapp
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -73,7 +74,7 @@ class PilihHewan : AppCompatActivity() {
         pMin = findViewById(R.id.PValue)
         pMax = findViewById(R.id.PValueMax)
 
-        val items = listOf("Sapi Pedaging", "Sapi Perah", "Kambing", "Domba")
+        val items = listOf("Konsentrat Sapi Penggemukan", "Konsentrat Sapi Laktasi", "Konsentrat Kambing Perah", "Konsentrat Domba Penggemukan")
         val autoComplete: AutoCompleteTextView = findViewById(R.id.autoComplete)
         val adapter = ArrayAdapter(this, R.layout.jenis_hewan, items)
         autoComplete.setAdapter(adapter)
@@ -81,11 +82,15 @@ class PilihHewan : AppCompatActivity() {
         autoComplete.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->
             val itemSelected = adapterView.getItemAtPosition(i)
             val pilihan: String = when (itemSelected) {
-                "Sapi Pedaging" -> "0"
-                "Sapi Perah" -> "1"
-                "Kambing" -> "3"
+                "Konsentrat Sapi Penggemukan" -> "0"
+                "Konsentrat Sapi Laktasi" -> "1"
+                "Konsentrat Kambing Perah" -> "3"
                 else -> "2"
             }
+
+            val sharedPref = getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
+            sharedPref.edit().putString("selectedItem", pilihan).apply()
+
 
             val db = Firebase.firestore
             db.collection("hewan").document(pilihan).get()

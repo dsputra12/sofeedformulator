@@ -1,6 +1,7 @@
 package com.sofeed.myapp
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -12,6 +13,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
+import com.sofeed.myapp.databinding.ActivityHasilFormulasiBinding
 import lpsolve.LinPro
 
 class HasilFormulasi : AppCompatActivity() {
@@ -24,11 +27,15 @@ class HasilFormulasi : AppCompatActivity() {
     private lateinit var backButton: Button
     private lateinit var nextButton: Button
 
+    private val firebaseAuth = FirebaseAuth.getInstance()
+    private lateinit var binding: ActivityHasilFormulasiBinding
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_hasil_formulasi)
+        binding = ActivityHasilFormulasiBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -87,5 +94,27 @@ class HasilFormulasi : AppCompatActivity() {
                 startActivity(hasilIntent)
             }
         }
+
+        val sharedPref = getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
+        val pilihan = sharedPref.getString("selectedItem", "0")
+
+        var keterangan = ""
+
+        when (pilihan) {
+            "0" -> keterangan = "Konsentrat Sapi Penggemukan Ternak User"
+            "1" -> keterangan = "Konsentrat Sapi Laktasi Ternak User"
+            "2" -> keterangan = "Konsentrat Kambing Perah Ternak User"
+            "3" -> keterangan = "Konsentrat Domba Penggemukan Ternak User"
+        }
+
+        val firebaseUser = firebaseAuth.currentUser
+        if (firebaseUser != null) {
+            val username = firebaseUser.displayName
+            val keteranganWithUser = keterangan.replace("Ternak User", "\nPeternakan Pak ${username ?: "User"}")
+            binding.keteranganPeternak.text = keteranganWithUser
+        } else {
+            startActivity(Intent(this, SignIn::class.java))
+        }
+
     }
 }

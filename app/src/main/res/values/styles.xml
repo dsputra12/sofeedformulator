@@ -23,4 +23,10 @@
             @drawable/rounded_rectangle2
         </item>
     </style>
+    <style name="button_kembali" parent="Widget.AppCompat.Button">
+        <item name="backgroundTint">@color/grey</item>
+    </style>
+    <style name="button_lihat" parent="Widget.AppCompat.Button">
+        <item name="backgroundTint">@color/hijau_tua</item>
+    </style>
 </resources>
