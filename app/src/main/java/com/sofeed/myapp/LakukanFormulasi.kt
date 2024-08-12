@@ -77,7 +77,8 @@ class LakukanFormulasi : AppCompatActivity() {
                         item.p,
                         item.metana,
                         item.hargaPakan.toDouble(),
-                        item.rasio
+                        item.rasio,
+                        item.tipePakan
                     )
                     hasil.add(komponen)
                 }

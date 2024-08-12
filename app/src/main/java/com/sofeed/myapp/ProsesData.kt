@@ -17,7 +17,8 @@ data class ProsesData(val nama : String,
                       val p: Double,
                       val metana: Double,
                       val harga: Double,
-                      val rasio : Double) : Parcelable {
+                      val rasio : Double,
+                      val jenis : String) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,
         parcel.readDouble(),
@@ -33,7 +34,8 @@ data class ProsesData(val nama : String,
         parcel.readDouble(),
         parcel.readDouble(),
         parcel.readDouble(),
-        parcel.readDouble()
+        parcel.readDouble(),
+        parcel.readString()!!
     ) {
     }
 
@@ -53,6 +55,7 @@ data class ProsesData(val nama : String,
         parcel.writeDouble(metana)
         parcel.writeDouble(harga)
         parcel.writeDouble(rasio)
+        parcel.writeString(jenis)
     }
 
     override fun describeContents(): Int {

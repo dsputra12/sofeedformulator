@@ -1,6 +1,7 @@
 package lpsolve;
 
 import android.util.Log;
+import android.util.TimingLogger;
 
 import com.sofeed.myapp.HasilData;
 import com.sofeed.myapp.ProsesData;
@@ -39,12 +40,14 @@ class Bahan {
     private final double[] komposisi = new double[12];
     private final double harga;
     private final double rasio;
+    private final String jenis;
 
-    public Bahan(String namaBahan, double[] data) {
+    public Bahan(String namaBahan, double[] data, String jenis) {
         this.namaBahan = namaBahan;
         System.arraycopy(data, 0, komposisi, 0, 12);
         this.harga = data[12];
         this.rasio = data[13];
+        this.jenis = jenis;
     }
 
     public double getRasio() {
@@ -58,11 +61,14 @@ class Bahan {
     public String getNamaBahan() {
         return namaBahan;
     }
+
+    public String getJenis() { return jenis;}
 }
 
 
 public class LinPro {
     public static ArrayList<HasilData> calculate(double[] hewan, ArrayList<ProsesData> pakan) {
+        long startTime = System.currentTimeMillis();
         ArrayList<HasilData> result = new ArrayList<>();
         Log.d("LinPro", "Starting calculation");
         // Log the input data
@@ -73,13 +79,14 @@ public class LinPro {
         Log.d("LinPro", "Jumlahnya: " + jumlahBahan);
 
 
-        //nutrisi
+        //Menerima Input Jenis Hewan dan Bahan Pakan
         Animal nutrisi = new Animal(hewan);
 
-        // Input ke class
         ArrayList<Bahan> bahanList = new ArrayList<>();
+
         pakan.forEach(i -> {
             String nama = i.getNama();
+            String jenis = i.getJenis();
             double[] data = new double[14];
             data[0] = i.getMinJumlah();
             data[1] = i.getMaxJumlah();
@@ -95,20 +102,23 @@ public class LinPro {
             data[11] = i.getMetana();
             data[12] = i.getHarga();
             data[13] = i.getRasio();
-            bahanList.add(new Bahan(nama, data));
+            bahanList.add(new Bahan(nama, data, jenis));
         });
 
-        // Set problem dari lp
+        // Deklarasi problem
         LpSolve problem;
         try {
+            /* Mendeklarasi Linear Program Baru dan Mengatur
+               Mode Masalah Minimasi */
             problem = LpSolve.makeLp(0, jumlahBahan);
             problem.setMinim();
+
             // Objective function
             for (int i = 0; i < jumlahBahan; i++) {
                 problem.setObj(i + 1, bahanList.get(i).getRasio() / 100.0);
             }
 
-            // Constraints
+            // Memasukan Konstrain Masing Masing Nutrisi
             for (int i = 0; i <= 1; i++) {
                 for (int j = 0; j < 9; j++) {
                     double[] constraint = new double[jumlahBahan + 1];
@@ -123,18 +133,31 @@ public class LinPro {
                 }
             }
 
-            // Boundaries
+            // Minimum dan Maksimum persen Bahan Pakan
             for (int i = 0; i < jumlahBahan; i++) {
                 problem.setLowbo(i + 1, bahanList.get(i).getKomposisi(0));
                 problem.setUpbo(i + 1, bahanList.get(i).getKomposisi(1));
             }
 
-            // Total 100 percent
+            // Semua Pakan 100 percent
             double[] totalConstraint = new double[jumlahBahan + 1];
             for (int i = 0; i < jumlahBahan; i++) {
                 totalConstraint[i + 1] = 1.0;
             }
             problem.addConstraint(totalConstraint, LpSolve.EQ, 100);
+
+            //Semua hijauan total minimal 40%
+            double[] totalHijau = new double[jumlahBahan + 1];
+            for (int i = 0; i < jumlahBahan; i++) {
+                if(bahanList.get(i).getJenis() == "Hijauan") {
+                    totalHijau[i + 1] = 1.0;
+                }else{
+                    totalHijau[i+1] = 0;
+                }
+            }
+            problem.addConstraint(totalConstraint, LpSolve.GE, 40);
+
+
             // Solve
             int cek = problem.solve();
 
@@ -145,15 +168,22 @@ public class LinPro {
                 }
                 problem.deleteLp();
                 Log.d("LinPro", "Calculation successful, result: " + result);
+                long endTime = System.currentTimeMillis();
+                Log.d("Waktu LinPro","Time: " + (endTime-startTime) + "ms");
                 return result;
             }else if(cek == 2)
             {
                 Log.d("LinPro", "Infeasible");
             }
+
+
         } catch (LpSolveException e) {
             e.printStackTrace();
         }
         Log.d("LinPro", "Calculation result is empty");
+
+        long endTime = System.currentTimeMillis();
+        Log.d("Waktu LinPro","Time: " + (endTime-startTime) + "ms");
         return result;
     }
 }
