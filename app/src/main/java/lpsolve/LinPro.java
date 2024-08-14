@@ -149,13 +149,15 @@ public class LinPro {
             //Semua hijauan total minimal 40%
             double[] totalHijau = new double[jumlahBahan + 1];
             for (int i = 0; i < jumlahBahan; i++) {
-                if(bahanList.get(i).getJenis() == "Hijauan") {
+                String tipe = bahanList.get(i).getJenis();
+                if(tipe.equalsIgnoreCase("Hijauan")) {
                     totalHijau[i + 1] = 1.0;
                 }else{
-                    totalHijau[i+1] = 0;
+                    totalHijau[i+1] = 0.0;
                 }
+                Log.d("Peruen", tipe + " " + i + ": " + totalHijau[i + 1]);
             }
-            problem.addConstraint(totalConstraint, LpSolve.GE, 40);
+            problem.addConstraint(totalHijau, LpSolve.GE, 40);
 
 
             // Solve

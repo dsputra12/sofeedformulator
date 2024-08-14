@@ -126,63 +126,30 @@ class PilihHewan : AppCompatActivity() {
             Toast.makeText(this, "Item: $itemSelected", Toast.LENGTH_SHORT).show()
         }
 
-        addTextWatchers()
-
         button = findViewById(R.id.SelectPakan)
         button.setOnClickListener {
+            hewan[0] = bkMin.text.toString().toDouble() ?: 0.0
+            hewan[1] = abuMin.text.toString().toDouble() ?: 0.0
+            hewan[2] = pkMin.text.toString().toDouble() ?: 0.0
+            hewan[3] = lkMin.text.toString().toDouble() ?: 0.0
+            hewan[4] = skMin.text.toString().toDouble() ?: 0.0
+            hewan[5] = betnMin.text.toString().toDouble() ?: 0.0
+            hewan[6] = tdnMin.text.toString().toDouble() ?: 0.0
+            hewan[7] = caMin.text.toString().toDouble() ?: 0.0
+            hewan[8] = pMin.text.toString().toDouble() ?: 0.0
+            hewan[9] = bkMax.text.toString().toDouble() ?: 0.0
+            hewan[10] = abuMax.text.toString().toDouble() ?: 0.0
+            hewan[11] = pkMax.text.toString().toDouble() ?: 0.0
+            hewan[12] = lkMax.text.toString().toDouble() ?: 0.0
+            hewan[13] = skMax.text.toString().toDouble() ?: 0.0
+            hewan[14] = betnMax.text.toString().toDouble() ?: 0.0
+            hewan[15] = tdnMax.text.toString().toDouble() ?: 0.0
+            hewan[16] = caMax.text.toString().toDouble() ?: 0.0
+            hewan[17] = pMax.text.toString().toDouble() ?: 0.0
             val intent = Intent(this, LakukanFormulasi::class.java)
             intent.putExtra("hewan", hewan)
             startActivity(intent)
         }
-    }
-
-    private fun addTextWatchers() {
-        addTextWatcher(bkMin, 0)
-        addTextWatcher(abuMin, 1)
-        addTextWatcher(pkMin, 2)
-        addTextWatcher(lkMin, 3)
-        addTextWatcher(skMin, 4)
-        addTextWatcher(betnMin, 5)
-        addTextWatcher(tdnMin, 6)
-        addTextWatcher(caMin, 7)
-        addTextWatcher(pMin, 8)
-        addTextWatcher(bkMax, 9)
-        addTextWatcher(abuMax, 10)
-        addTextWatcher(pkMax, 11)
-        addTextWatcher(lkMax, 12)
-        addTextWatcher(skMax, 13)
-        addTextWatcher(betnMax, 14)
-        addTextWatcher(tdnMax, 15)
-        addTextWatcher(caMax, 16)
-        addTextWatcher(pMax, 17)
-    }
-
-    private fun addTextWatcher(editText: EditText, position: Int) {
-        editText.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-
-            @SuppressLint("DefaultLocale")
-            override fun afterTextChanged(s: Editable?) {
-                if (!isUpdating) {
-                    isUpdating = true
-                    try {
-                        val value = s.toString().toDoubleOrNull()
-                        if (value != null) {
-                            editText.removeTextChangedListener(this)
-                            editText.setText(String.format("%.2f", value))
-                            editText.setSelection(editText.text.length)
-                            hewan[position] = value
-                            editText.addTextChangedListener(this)
-                        }
-                    } catch (e: NumberFormatException) {
-                        editText.error = "Invalid number"
-                    }
-                    isUpdating = false
-                }
-            }
-        })
     }
 
     @SuppressLint("DefaultLocale")
